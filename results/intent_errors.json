@@ -1,0 +1,474 @@
+[
+  {
+    "text": "hi eco advisor",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_handover",
+      "confidence": 0.9847450852394104
+    }
+  },
+  {
+    "text": "have a nice day",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "provide_budget",
+      "confidence": 0.47462931275367737
+    }
+  },
+  {
+    "text": "that works",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "thank_you",
+      "confidence": 0.6011653542518616
+    }
+  },
+  {
+    "text": "no thanks",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "thank_you",
+      "confidence": 0.907091498374939
+    }
+  },
+  {
+    "text": "Paris",
+    "intent": "provide_destination",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.37328556180000305
+    }
+  },
+  {
+    "text": "Singapore",
+    "intent": "provide_origin",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.9807407259941101
+    }
+  },
+  {
+    "text": "I want to travel by train",
+    "intent": "provide_transport_mode",
+    "intent_prediction": {
+      "name": "ask_transport",
+      "confidence": 0.2930467426776886
+    }
+  },
+  {
+    "text": "I need expert help",
+    "intent": "ask_handover",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.9238095283508301
+    }
+  },
+  {
+    "text": "write my university essay",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5650467276573181
+    }
+  },
+  {
+    "text": "play some music",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.36813443899154663
+    }
+  },
+  {
+    "text": "I need some travel help",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "ask_handover",
+      "confidence": 0.5867718458175659
+    }
+  },
+  {
+    "text": "that's all",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank_you",
+      "confidence": 0.8156201243400574
+    }
+  },
+  {
+    "text": "sounds good",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.4732303023338318
+    }
+  },
+  {
+    "text": "I don't want that",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "thank_you",
+      "confidence": 0.3348636031150818
+    }
+  },
+  {
+    "text": "Barcelona",
+    "intent": "provide_destination",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.7111971974372864
+    }
+  },
+  {
+    "text": "I will travel next weekend",
+    "intent": "provide_dates",
+    "intent_prediction": {
+      "name": "provide_transport_mode",
+      "confidence": 0.8366420269012451
+    }
+  },
+  {
+    "text": "I am travelling from Monday to Friday",
+    "intent": "provide_dates",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.9586440324783325
+    }
+  },
+  {
+    "text": "I want the greenest options",
+    "intent": "provide_sustainability",
+    "intent_prediction": {
+      "name": "ask_carbon",
+      "confidence": 0.3446524739265442
+    }
+  },
+  {
+    "text": "I prefer low carbon travel",
+    "intent": "provide_sustainability",
+    "intent_prediction": {
+      "name": "ask_carbon",
+      "confidence": 0.4002175033092499
+    }
+  },
+  {
+    "text": "my departure city is Vienna",
+    "intent": "provide_origin",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.8900469541549683
+    }
+  },
+  {
+    "text": "I am flying",
+    "intent": "provide_transport_mode",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.1773817539215088
+    }
+  },
+  {
+    "text": "use a flight",
+    "intent": "provide_transport_mode",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.34675946831703186
+    }
+  },
+  {
+    "text": "recommend environmentally friendly lodging",
+    "intent": "ask_accommodation",
+    "intent_prediction": {
+      "name": "provide_sustainability",
+      "confidence": 0.3526865243911743
+    }
+  },
+  {
+    "text": "please escalate my request",
+    "intent": "ask_handover",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.29643794894218445
+    }
+  },
+  {
+    "text": "help me fix my computer",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "plan_trip",
+      "confidence": 0.5384332537651062
+    }
+  },
+  {
+    "text": "what movie should I watch",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_carbon",
+      "confidence": 0.45911476016044617
+    }
+  },
+  {
+    "text": "correct",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "ask_handover",
+      "confidence": 0.5674673914909363
+    }
+  },
+  {
+    "text": "I am travelling to Amsterdam",
+    "intent": "provide_destination",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.8823201656341553
+    }
+  },
+  {
+    "text": "the origin is Berlin",
+    "intent": "provide_origin",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.9371797442436218
+    }
+  },
+  {
+    "text": "find sustainable attractions",
+    "intent": "ask_activities",
+    "intent_prediction": {
+      "name": "provide_sustainability",
+      "confidence": 0.3218630850315094
+    }
+  },
+  {
+    "text": "am I talking to a chatbot",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.533179521560669
+    }
+  },
+  {
+    "text": "is this automated",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.6733629107475281
+    }
+  },
+  {
+    "text": "who won the football match",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "ask_carbon",
+      "confidence": 0.613558292388916
+    }
+  },
+  {
+    "text": "definitely not",
+    "intent": "deny",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8512654304504395
+    }
+  },
+  {
+    "text": "I want to travel sustainably",
+    "intent": "plan_trip",
+    "intent_prediction": {
+      "name": "provide_sustainability",
+      "confidence": 0.44760480523109436
+    }
+  },
+  {
+    "text": "help me create an eco travel itinerary",
+    "intent": "plan_trip",
+    "intent_prediction": {
+      "name": "ask_activities",
+      "confidence": 0.27869850397109985
+    }
+  },
+  {
+    "text": "take me to Vienna",
+    "intent": "provide_destination",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.39766478538513184
+    }
+  },
+  {
+    "text": "I want to travel to Singapore",
+    "intent": "provide_destination",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.5592412352561951
+    }
+  },
+  {
+    "text": "low",
+    "intent": "provide_sustainability",
+    "intent_prediction": {
+      "name": "ask_accommodation",
+      "confidence": 0.3238479495048523
+    }
+  },
+  {
+    "text": "Dubai",
+    "intent": "provide_origin",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.9785391688346863
+    }
+  },
+  {
+    "text": "what is the most sustainable way to travel",
+    "intent": "ask_transport",
+    "intent_prediction": {
+      "name": "ask_carbon",
+      "confidence": 0.26210644841194153
+    }
+  },
+  {
+    "text": "where should I stay",
+    "intent": "ask_accommodation",
+    "intent_prediction": {
+      "name": "ask_transport",
+      "confidence": 0.45652028918266296
+    }
+  },
+  {
+    "text": "what can I do at my destination",
+    "intent": "ask_activities",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.921630322933197
+    }
+  },
+  {
+    "text": "connect me to a travel advisor",
+    "intent": "ask_handover",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.41114237904548645
+    }
+  },
+  {
+    "text": "tell me a joke",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.27811479568481445
+    }
+  },
+  {
+    "text": "what is the stock market doing",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.5402407646179199
+    }
+  },
+  {
+    "text": "good afternoon",
+    "intent": "greet",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.4152985215187073
+    }
+  },
+  {
+    "text": "thank you bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thank_you",
+      "confidence": 0.8348710536956787
+    }
+  },
+  {
+    "text": "I am done",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.26277387142181396
+    }
+  },
+  {
+    "text": "sure",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "provide_origin",
+      "confidence": 0.2839953601360321
+    }
+  },
+  {
+    "text": "definitely",
+    "intent": "affirm",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.9684060215950012
+    }
+  },
+  {
+    "text": "I am thinking about Zurich",
+    "intent": "provide_destination",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.47890913486480713
+    }
+  },
+  {
+    "text": "I want to go next month",
+    "intent": "provide_dates",
+    "intent_prediction": {
+      "name": "provide_destination",
+      "confidence": 0.7263561487197876
+    }
+  },
+  {
+    "text": "choose environmentally friendly options",
+    "intent": "provide_sustainability",
+    "intent_prediction": {
+      "name": "ask_accommodation",
+      "confidence": 0.37139683961868286
+    }
+  },
+  {
+    "text": "should I travel by train or plane",
+    "intent": "ask_transport",
+    "intent_prediction": {
+      "name": "provide_transport_mode",
+      "confidence": 0.992460310459137
+    }
+  },
+  {
+    "text": "which option has the lowest carbon footprint",
+    "intent": "ask_carbon",
+    "intent_prediction": {
+      "name": "ask_transport",
+      "confidence": 0.7811586260795593
+    }
+  },
+  {
+    "text": "transfer me to an agent",
+    "intent": "ask_handover",
+    "intent_prediction": {
+      "name": "ask_transport",
+      "confidence": 0.6571429967880249
+    }
+  },
+  {
+    "text": "I appreciate it",
+    "intent": "thank_you",
+    "intent_prediction": {
+      "name": "provide_transport_mode",
+      "confidence": 0.7541415095329285
+    }
+  },
+  {
+    "text": "order food for me",
+    "intent": "out_of_scope",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.25702592730522156
+    }
+  }
+]

@@ -1,0 +1,21 @@
+# EcoTravel Advisor – Python Dependencies
+# MSc Assignment: Conversational Agent for Sustainable Tourism Planning
+#
+# IMPORTANT: Install into the project virtual environment only.
+# Activate: EcoTravelAdvisor\.venv\Scripts\activate
+# Install:  pip install -r requirements.txt
+
+# Core Rasa framework
+rasa==3.6.21
+
+# Rasa action server SDK
+rasa-sdk==3.6.2
+
+# Environment variable management
+python-dotenv==1.2.3
+
+# HTTP client for API calls (Climatiq, Amadeus)
+requests>=2.28.0
+
+# SQLAlchemy pinned below 2.x for Rasa 3.6 compatibility
+SQLAlchemy<2.0

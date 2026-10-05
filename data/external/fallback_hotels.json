@@ -1,0 +1,112 @@
+[
+  {
+    "name": "Hôtel Récamier",
+    "destination": "paris",
+    "price": 145,
+    "carbon_score": 8,
+    "sustainability_score": 8,
+    "features": "Central location; accessible by metro (lines 4 and 12); no on-site car park encourages public transport use. Environmental features reported by source: energy-efficient lighting, linen reuse programme.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "Generator Paris",
+    "destination": "paris",
+    "price": 55,
+    "carbon_score": 7,
+    "sustainability_score": 7,
+    "features": "Budget eco-friendly hostel. Located near Gare du Nord with excellent public transport links. Environmental features reported by source: recycling programme, LED lighting.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "Pullman Paris Tour Eiffel",
+    "destination": "paris",
+    "price": 280,
+    "carbon_score": 6,
+    "sustainability_score": 7,
+    "features": "Near Trocadéro metro. Environmental features reported by source: ISO 14001 certified, water-saving fixtures, locally sourced restaurant options.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "The Curtain Hotel",
+    "destination": "london",
+    "price": 210,
+    "carbon_score": 7,
+    "sustainability_score": 8,
+    "features": "Shoreditch location; excellent public transport (Old Street/Liverpool Street). Environmental features reported by source: rooftop garden, responsibly sourced food, sustainability programme.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "citizenM London Bankside",
+    "destination": "london",
+    "price": 130,
+    "carbon_score": 8,
+    "sustainability_score": 9,
+    "features": "Walking distance from Borough Market and Tate Modern. Environmental features reported by source: carbon neutral since 2020 (self-reported), renewable energy, water recycling.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "Hotel Indigo London Paddington",
+    "destination": "london",
+    "price": 165,
+    "carbon_score": 7,
+    "sustainability_score": 7,
+    "features": "Direct rail links from Paddington. Environmental features reported by source: IHG Green Engage programme, energy monitoring.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "Hotel Ottilia",
+    "destination": "berlin",
+    "price": 120,
+    "carbon_score": 9,
+    "sustainability_score": 9,
+    "features": "Located in a converted brewery. Excellent public transport connections. Environmental features reported by source: renewable energy, bike hire on-site, organic breakfast.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "25hours Hotel Bikini Berlin",
+    "destination": "berlin",
+    "price": 155,
+    "carbon_score": 8,
+    "sustainability_score": 8,
+    "features": "Zoo/Tiergarten area with excellent U-Bahn access. Environmental features reported by source: recycled furnishings, social responsibility programme.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "Hotel Arts Barcelona",
+    "destination": "barcelona",
+    "price": 350,
+    "carbon_score": 6,
+    "sustainability_score": 7,
+    "features": "Beachfront location near Barceloneta metro. Environmental features reported by source: ISO 14001 certified, energy management system.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "Praktik Rambla",
+    "destination": "barcelona",
+    "price": 90,
+    "carbon_score": 8,
+    "sustainability_score": 8,
+    "features": "Heart of Las Ramblas; walkable to major attractions. Environmental features reported by source: energy efficient design, locally sourced breakfast.",
+    "source": "Local demonstration data",
+    "verified": false
+  },
+  {
+    "name": "NH Collection Amsterdam",
+    "destination": "amsterdam",
+    "price": 180,
+    "carbon_score": 8,
+    "sustainability_score": 8,
+    "features": "Near Centraal Station; bike hire available. Environmental features reported by source: EU Ecolabel certified (self-reported), energy and water saving measures.",
+    "source": "Local demonstration data",
+    "verified": false
+  }
+]

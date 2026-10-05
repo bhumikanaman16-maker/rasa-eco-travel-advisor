@@ -1,0 +1,19 @@
+[
+  {
+    "text": "should I travel by train or plane",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "transport_mode",
+        "start": 28,
+        "end": 33,
+        "confidence_entity": 0.7112403512001038,
+        "value": "air",
+        "extractor": "DIETClassifier",
+        "processors": [
+          "EntitySynonymMapper"
+        ]
+      }
+    ]
+  }
+]

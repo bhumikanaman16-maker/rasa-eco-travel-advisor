@@ -1,0 +1,175 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - nlu_fallback
+  - plan_trip
+  - provide_destination
+  - provide_dates
+  - provide_budget
+  - provide_sustainability
+  - provide_origin
+  - provide_transport_mode
+  - ask_transport
+  - ask_accommodation
+  - ask_activities
+  - ask_flights
+  - ask_carbon
+  - ask_carbon_offset
+  - ask_handover
+  - thank_you
+  - bot_challenge
+  - out_of_scope
+
+entities:
+  - destination
+  - travel_dates
+  - budget
+  - sustainability_level
+  - origin
+  - transport_mode
+
+slots:
+
+  destination:
+    type: text
+    influence_conversation: true
+    mappings:
+      # During trip planning: accept entity extraction
+      - type: from_entity
+        entity: destination
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: destination
+
+      # During carbon form: accept free text typed by user
+      - type: from_text
+        conditions:
+          - active_loop: carbon_calculation_form
+            requested_slot: destination
+
+  travel_dates:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: travel_dates
+
+  budget:
+    type: text
+    influence_conversation: true
+    mappings:
+      # Accept text directly so "800 euros" works reliably
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: budget
+
+  sustainability_level:
+    type: text
+    influence_conversation: true
+    mappings:
+      # Accept text directly so "high" / "medium" / "low" works reliably
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: sustainability_level
+
+  origin:
+    type: text
+    influence_conversation: true
+    mappings:
+      # Accept free text typed by user during carbon form
+      - type: from_text
+        conditions:
+          - active_loop: carbon_calculation_form
+            requested_slot: origin
+
+  transport_mode:
+    type: text
+    influence_conversation: true
+    mappings:
+      # Accept free text typed by user during carbon form
+      - type: from_text
+        conditions:
+          - active_loop: carbon_calculation_form
+            requested_slot: transport_mode
+
+  fallback_count:
+    type: float
+    initial_value: 0
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+forms:
+  trip_planning_form:
+    required_slots:
+      - destination
+      - travel_dates
+      - budget
+      - sustainability_level
+
+  carbon_calculation_form:
+    required_slots:
+      - origin
+      - destination
+      - transport_mode
+
+responses:
+
+  utter_greet:
+    - text: "Hello! 🌱 I am EcoTravel Advisor, your sustainable journey companion. I can help you plan eco-friendly trips, estimate carbon emissions, find green accommodation, and compare sustainable transport options. Would you like to start planning a trip?"
+
+  utter_goodbye:
+    - text: "Goodbye! Thank you for using EcoTravel Advisor. Travel sustainably and make a positive difference. 🌍♻️"
+
+  utter_thank_you:
+    - text: "You're welcome! I'm delighted to help you travel more sustainably. Let me know if there is anything else I can assist with."
+
+  utter_iamabot:
+    - text: "I am EcoTravel Advisor — an AI-powered sustainable travel assistant built with Rasa Open Source. I provide sustainable travel guidance including carbon footprint calculations, eco-accommodation recommendations, and green transport options. I can escalate complex requests to a human travel advisor."
+
+  utter_ask_destination:
+    - text: "Where would you like to travel? Please enter the destination city or country."
+
+  utter_ask_travel_dates:
+    - text: "What dates are you planning to travel? Please enter the date range, for example: 10 October to 15 October."
+
+  utter_ask_budget:
+    - text: "What is your approximate travel budget? Please enter an amount, for example: 800 euros or £600."
+
+  utter_ask_sustainability_level:
+    - text: "How important is sustainability to you for this trip? Please enter low, medium, or high."
+
+  utter_ask_origin:
+    - text: "Where will your journey start from? Please enter the city or location."
+
+  utter_ask_transport_mode:
+    - text: "Which transport mode would you like me to calculate emissions for? Please enter rail, car, or air."
+
+  utter_out_of_scope:
+    - text: "I am specifically designed for sustainable travel planning. I can help with destinations, transport comparisons, carbon footprint calculations, eco-accommodation, and sustainable activities. Is there something travel-related I can assist you with?"
+
+  utter_default:
+    - text: "I'm sorry, I didn't fully understand that. Could you rephrase your request, or choose an option from the menu?"
+
+actions:
+  - action_submit_trip_plan
+  - action_recommend_transport
+  - action_recommend_accommodation
+  - action_recommend_activities
+  - action_search_flights
+  - action_calculate_carbon
+  - action_recommend_carbon_offsets
+  - action_human_handover
+  - action_handle_fallback
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

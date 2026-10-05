@@ -1,0 +1,66 @@
+version: "3.9"
+
+# EcoTravel Advisor – Docker Compose
+# MSc Assignment: Sustainable Tourism Planning Chatbot
+#
+# Services:
+#   - rasa:    Rasa NLU and core server
+#   - actions: Custom action server (Climatiq, Amadeus APIs)
+#   - nginx:   Static file server for the web frontend
+#
+# Usage:
+#   cp .env.example .env && nano .env    # add your API keys
+#   docker-compose up --build
+#
+# IMPORTANT: Secrets are read from .env — never hard-code them here.
+
+services:
+
+  # ── Rasa NLU + Core ──────────────────────────────────────────
+  rasa:
+    image: rasa/rasa:3.6.21-full
+    container_name: ecotraveladvisor_rasa
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./models:/app/models
+      - ./config.yml:/app/config.yml
+      - ./domain.yml:/app/domain.yml
+      - ./data:/app/data
+      - ./credentials.yml:/app/credentials.yml
+      - ./endpoints.docker.yml:/app/endpoints.yml
+    command: >
+      run
+      --enable-api
+      --cors "*"
+      --debug
+      --model /app/models
+      --endpoints /app/endpoints.yml
+    depends_on:
+      - actions
+    restart: unless-stopped
+
+  # ── Action Server ─────────────────────────────────────────────
+  actions:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ecotraveladvisor_actions
+    ports:
+      - "5055:5055"
+    env_file:
+      - .env
+    volumes:
+      - ./actions:/app/actions
+      - ./data/external:/app/data/external
+    restart: unless-stopped
+
+  # ── Frontend (Nginx static server) ───────────────────────────
+  frontend:
+    image: nginx:alpine
+    container_name: ecotraveladvisor_frontend
+    ports:
+      - "8080:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html:ro
+    restart: unless-stopped

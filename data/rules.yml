@@ -1,0 +1,85 @@
+version: "3.1"
+
+rules:
+  - rule: Activate trip planning form
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+
+  - rule: Submit trip planning form
+    condition:
+      - active_loop: trip_planning_form
+    steps:
+      - action: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+
+  - rule: Activate carbon calculation form
+    steps:
+      - intent: ask_carbon
+      - action: carbon_calculation_form
+      - active_loop: carbon_calculation_form
+
+  - rule: Submit carbon calculation form
+    condition:
+      - active_loop: carbon_calculation_form
+    steps:
+      - action: carbon_calculation_form
+      - active_loop: null
+      - action: action_calculate_carbon
+
+  - rule: Respond to goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Respond to thank you
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - rule: Respond to bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Handle out of scope request
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+
+  - rule: Recommend transport
+    steps:
+      - intent: ask_transport
+      - action: action_recommend_transport
+
+  - rule: Recommend accommodation
+    steps:
+      - intent: ask_accommodation
+      - action: action_recommend_accommodation
+
+  - rule: Recommend activities
+    steps:
+      - intent: ask_activities
+      - action: action_recommend_activities
+
+  - rule: Search flights
+    steps:
+      - intent: ask_flights
+      - action: action_search_flights
+
+  - rule: Recommend carbon offsets
+    steps:
+      - intent: ask_carbon_offset
+      - action: action_recommend_carbon_offsets
+
+  - rule: Human advisor handover
+    steps:
+      - intent: ask_handover
+      - action: action_human_handover
+
+  - rule: Handle NLU fallback
+    steps:
+      - intent: nlu_fallback
+      - action: action_handle_fallback

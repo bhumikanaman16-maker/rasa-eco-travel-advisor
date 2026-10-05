@@ -1,0 +1,219 @@
+version: "3.1"
+
+# Core conversation flow tests for rasa test core / rasa test
+# Tests cover all major user journeys as required by the MSc assignment.
+
+stories:
+
+  # ── TEST 1: Greeting ─────────────────────────────────────────────
+  - story: test greeting
+    steps:
+      - user: |
+          hello
+        intent: greet
+      - action: utter_greet
+
+  # ── TEST 2: Goodbye ──────────────────────────────────────────────
+  - story: test goodbye
+    steps:
+      - user: |
+          bye
+        intent: goodbye
+      - action: utter_goodbye
+
+  # ── TEST 3: Thank you ────────────────────────────────────────────
+  - story: test thank you
+    steps:
+      - user: |
+          thank you
+        intent: thank_you
+      - action: utter_thank_you
+
+  # ── TEST 4: Bot challenge ────────────────────────────────────────
+  - story: test bot challenge
+    steps:
+      - user: |
+          are you a bot
+        intent: bot_challenge
+      - action: utter_iamabot
+
+  # ── TEST 5: Out of scope ─────────────────────────────────────────
+  - story: test out of scope
+    steps:
+      - user: |
+          tell me a joke
+        intent: out_of_scope
+      - action: utter_out_of_scope
+
+  # ── TEST 6: Full trip planning form ──────────────────────────────
+  - story: test full trip planning form
+    steps:
+      - user: |
+          I want to plan a trip
+        intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - user: |
+          Paris
+        intent: provide_destination
+      - action: trip_planning_form
+      - user: |
+          10 October to 15 October
+        intent: provide_dates
+      - action: trip_planning_form
+      - user: |
+          800 euros
+        intent: provide_budget
+      - action: trip_planning_form
+      - user: |
+          high
+        intent: provide_sustainability
+      - action: trip_planning_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_submit_trip_plan
+
+  # ── TEST 7: Request sustainable transport ─────────────────────────
+  - story: test ask transport
+    steps:
+      - user: |
+          recommend sustainable transport
+        intent: ask_transport
+      - action: action_recommend_transport
+
+  # ── TEST 8: Request eco accommodation ────────────────────────────
+  - story: test ask accommodation
+    steps:
+      - user: |
+          recommend an eco friendly hotel
+        intent: ask_accommodation
+      - action: action_recommend_accommodation
+
+  # ── TEST 9: Request sustainable activities ───────────────────────
+  - story: test ask activities
+    steps:
+      - user: |
+          recommend sustainable activities
+        intent: ask_activities
+      - action: action_recommend_activities
+
+  # ── TEST 9b: Request flight search ────────────────────────────────
+  - story: test ask flights
+    steps:
+      - user: |
+          search for flights
+        intent: ask_flights
+      - action: action_search_flights
+
+  # ── TEST 10: Carbon calculation form ─────────────────────────────
+  - story: test carbon calculation form
+    steps:
+      - user: |
+          calculate my carbon footprint
+        intent: ask_carbon
+      - action: carbon_calculation_form
+      - active_loop: carbon_calculation_form
+      - user: |
+          London
+        intent: provide_origin
+      - action: carbon_calculation_form
+      - user: |
+          Paris
+        intent: provide_destination
+      - action: carbon_calculation_form
+      - user: |
+          rail
+        intent: provide_transport_mode
+      - action: carbon_calculation_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_calculate_carbon
+
+  # ── TEST 11: Human handover ───────────────────────────────────────
+  - story: test human handover
+    steps:
+      - user: |
+          I want to speak to a human
+        intent: ask_handover
+      - action: action_human_handover
+
+  # ── TEST 12: NLU fallback stage 1 ────────────────────────────────
+  - story: test fallback stage 1
+    steps:
+      - user: |
+          qwerty zxcvbn poiuy
+        intent: nlu_fallback
+      - action: action_handle_fallback
+
+  # ── TEST 13: Plan trip then ask carbon ───────────────────────────
+  - story: test plan trip then ask carbon
+    steps:
+      - user: |
+          I want to plan a trip
+        intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - user: |
+          calculate my carbon footprint
+        intent: ask_carbon
+      - action: carbon_calculation_form
+      - active_loop: carbon_calculation_form
+      - active_loop: null
+      - action: action_calculate_carbon
+
+  # ── TEST 14: Plan trip then ask transport ────────────────────────
+  - story: test plan trip then ask transport
+    steps:
+      - user: |
+          I want to plan a trip
+        intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - user: |
+          recommend sustainable transport
+        intent: ask_transport
+      - action: action_recommend_transport
+
+  # ── TEST 15: Plan trip then ask accommodation ────────────────────
+  - story: test plan trip then ask accommodation
+    steps:
+      - user: |
+          I want to plan a trip
+        intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - user: |
+          recommend an eco friendly hotel
+        intent: ask_accommodation
+      - action: action_recommend_accommodation
+
+  # ── TEST 16: Carbon offset recommendation ────────────────────────
+  - story: test carbon offset recommendation
+    steps:
+      - user: |
+          recommend carbon offset programmes
+        intent: ask_carbon_offset
+      - action: action_recommend_carbon_offsets
+
+  # ── TEST 17: Plan trip then ask carbon offset ────────────────────
+  - story: test plan trip then ask carbon offset
+    steps:
+      - user: |
+          I want to plan a trip
+        intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - user: |
+          show carbon offset resources
+        intent: ask_carbon_offset
+      - action: action_recommend_carbon_offsets

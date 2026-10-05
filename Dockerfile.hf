@@ -1,0 +1,31 @@
+# EcoTravel Advisor – Hugging Face Single-Container Dockerfile
+# MSc Assignment Stage 5: Hugging Face Spaces Deployment
+
+FROM rasa/rasa:3.6.21-full
+
+USER root
+
+# Install Nginx reverse proxy
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    nginx \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy project codebase and model artifacts
+COPY . .
+
+# Install action server dependencies
+RUN pip install --no-cache-dir python-dotenv requests "SQLAlchemy<2.0"
+
+# Configure permissions for non-root user 1000/1001 (Hugging Face standard)
+RUN chmod +x /app/start-hf.sh \
+    && mkdir -p /var/log/nginx /var/lib/nginx /run /tmp/nginx \
+    && chown -R 1001:1001 /app /var/log/nginx /var/lib/nginx /run /tmp/nginx /etc/nginx
+
+USER 1001
+
+EXPOSE 7860
+ENTRYPOINT []
+CMD ["/bin/bash", "/app/start-hf.sh"]

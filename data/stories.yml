@@ -1,0 +1,112 @@
+version: "3.1"
+
+stories:
+  - story: greet and start sustainable trip planning
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: affirm
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+
+  - story: directly start trip planning
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+
+  - story: trip planning completed
+    steps:
+      - action: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+
+  - story: ask for sustainable transport
+    steps:
+      - intent: ask_transport
+      - action: action_recommend_transport
+
+  - story: ask for eco friendly accommodation
+    steps:
+      - intent: ask_accommodation
+      - action: action_recommend_accommodation
+
+  - story: ask for sustainable activities
+    steps:
+      - intent: ask_activities
+      - action: action_recommend_activities
+
+  - story: ask for flight options
+    steps:
+      - intent: ask_flights
+      - action: action_search_flights
+
+  - story: start carbon calculation
+    steps:
+      - intent: ask_carbon
+      - action: carbon_calculation_form
+      - active_loop: carbon_calculation_form
+
+  - story: carbon calculation completed
+    steps:
+      - action: carbon_calculation_form
+      - active_loop: null
+      - action: action_calculate_carbon
+
+  - story: request human advisor
+    steps:
+      - intent: ask_handover
+      - action: action_human_handover
+
+  - story: thank the assistant
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - story: ask whether assistant is a bot
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - story: goodbye conversation
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: out of scope question
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
+
+  - story: plan trip then ask transport
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - intent: ask_transport
+      - action: action_recommend_transport
+
+  - story: plan trip then ask accommodation
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - intent: ask_accommodation
+      - action: action_recommend_accommodation
+
+  - story: plan trip then calculate carbon
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - intent: ask_carbon
+      - action: carbon_calculation_form
+      - active_loop: carbon_calculation_form
+      - active_loop: null
+      - action: action_calculate_carbon

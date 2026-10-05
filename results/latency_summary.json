@@ -1,0 +1,175 @@
+{
+  "test_metadata": {
+    "rasa_endpoint": "http://127.0.0.1:5005/webhooks/rest/webhook",
+    "timing_method": "time.perf_counter()",
+    "warmup_requests": 2,
+    "measured_iterations": 10,
+    "target_latency_seconds": 3.0,
+    "request_timeout_seconds": 30,
+    "timestamp": "2026-10-05T14:16:47+0530"
+  },
+  "local_interactions": [
+    {
+      "scenario": "A. Greeting",
+      "description": "Simple greeting – Rasa NLU + response template",
+      "category": "local",
+      "message": "hello",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0236,
+        "mean": 0.0372,
+        "median": 0.0356,
+        "max": 0.0466,
+        "p95": 0.0466,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "B. Start trip planning",
+      "description": "Intent trigger for trip planning form activation",
+      "category": "local",
+      "message": "/plan_trip",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0212,
+        "mean": 0.0353,
+        "median": 0.0386,
+        "max": 0.0468,
+        "p95": 0.0468,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "C. Sustainable activities request",
+      "description": "Triggers action_recommend_activities (local JSON data, no external API)",
+      "category": "local",
+      "message": "recommend sustainable activities",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0447,
+        "mean": 0.0573,
+        "median": 0.0614,
+        "max": 0.0652,
+        "p95": 0.0652,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "D. Carbon offset programmes",
+      "description": "Triggers action_recommend_carbon_offsets (local JSON data, no external API)",
+      "category": "local",
+      "message": "recommend carbon offset programmes",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0453,
+        "mean": 0.0605,
+        "median": 0.0621,
+        "max": 0.065,
+        "p95": 0.065,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "E. Bot challenge",
+      "description": "Simple utter_iamabot response – pure Rasa response",
+      "category": "local",
+      "message": "are you a bot?",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0226,
+        "mean": 0.0388,
+        "median": 0.0449,
+        "max": 0.0477,
+        "p95": 0.0477,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "F. Fallback (ambiguous input)",
+      "description": "Deliberately unsupported input to trigger fallback mechanism",
+      "category": "local",
+      "message": "xyzzy flurble nonsense 12345",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0439,
+        "mean": 0.0605,
+        "median": 0.0625,
+        "max": 0.0648,
+        "p95": 0.0648,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    }
+  ],
+  "external_dependent_interactions": [
+    {
+      "scenario": "G. Flight search (external-dependent)",
+      "description": "Triggers action_search_flights – attempts Amadeus API then falls back to local data",
+      "category": "external-dependent",
+      "message": "/ask_flights",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0467,
+        "mean": 0.0618,
+        "median": 0.0625,
+        "max": 0.0687,
+        "p95": 0.0687,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "H. Eco accommodation (external-dependent)",
+      "description": "Triggers action_recommend_accommodation – attempts Amadeus API then falls back",
+      "category": "external-dependent",
+      "message": "/ask_accommodation",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0465,
+        "mean": 0.0606,
+        "median": 0.0616,
+        "max": 0.0653,
+        "p95": 0.0653,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Demonstration Flight Option A",
+    "route": "Direct flight option",
+    "flight_type": "Direct",
+    "price": "Not available from live API",
+    "sustainability_info": "Not verified (Local demonstration record only)"
+  },
+  {
+    "title": "Demonstration Flight Option B",
+    "route": "Connecting flight option",
+    "flight_type": "Connecting",
+    "price": "Not available from live API",
+    "sustainability_info": "Not verified (Local demonstration record only)"
+  }
+]

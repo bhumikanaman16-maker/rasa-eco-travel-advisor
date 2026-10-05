@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Gold Standard for the Global Goals",
+    "organisation": "Gold Standard Foundation",
+    "type": "Standard & Registry",
+    "description": "Non-profit impact standard established in 2003 by WWF and international NGOs to quantify, certify, and report climate and sustainable development contributions.",
+    "verification_or_standard": "Gold Standard Principles & Requirements",
+    "official_url": "https://www.goldstandard.org",
+    "source_note": "Official standard documentation at globalgoals.goldstandard.org",
+    "date_checked": "2026-10-02"
+  },
+  {
+    "name": "Verified Carbon Standard (VCS)",
+    "organisation": "Verra",
+    "type": "Standard & Registry",
+    "description": "Voluntary greenhouse gas program providing carbon accounting methodologies, project validation requirements, and an official project registry.",
+    "verification_or_standard": "Verified Carbon Standard (VCS)",
+    "official_url": "https://verra.org",
+    "source_note": "Official standard body documentation at verra.org",
+    "date_checked": "2026-10-02"
+  },
+  {
+    "name": "Plan Vivo Standard",
+    "organisation": "Plan Vivo Foundation",
+    "type": "Standard & Certification Body",
+    "description": "Certification standard focused on community-led nature-based solutions, ecosystem restoration, and sustainable land use projects.",
+    "verification_or_standard": "Plan Vivo Standard",
+    "official_url": "https://www.planvivo.org",
+    "source_note": "Official standard body documentation at planvivo.org",
+    "date_checked": "2026-10-02"
+  },
+  {
+    "name": "Integrity Council for the Voluntary Carbon Market (ICVCM)",
+    "organisation": "ICVCM",
+    "type": "Governance & Quality Framework",
+    "description": "Independent governance body defining benchmark quality standards (Core Carbon Principles - CCPs) for high-integrity carbon credits.",
+    "verification_or_standard": "Core Carbon Principles (CCPs)",
+    "official_url": "https://icvcm.org",
+    "source_note": "Official governance body framework at icvcm.org",
+    "date_checked": "2026-10-02"
+  }
+]

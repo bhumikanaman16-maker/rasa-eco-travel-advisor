@@ -1,0 +1,88 @@
+============================================================
+EcoTravel Advisor – Hugging Face Deployment Verification
+MSc Assignment Stage 5: Hugging Face Spaces Deployment
+============================================================
+
+Timestamp: 2026-10-05T15:09:26+05:30
+Project Directory: C:\Users\sudar\Downloads\EcoTravelAdvisor
+Status Outcome: LOCAL HF ARCHITECTURE VERIFIED — CLOUD DEPLOYMENT BLOCKED
+
+1. SINGLE-CONTAINER ARCHITECTURE DESIGN
+------------------------------------------------------------
+Base Image:             rasa/rasa:3.6.21-full
+Container User:         1001 (Non-root user compatibility for Hugging Face)
+Exposed Public Port:    7860 (Hugging Face Docker Space default app_port)
+
+Internal Components:
+  - Public Port 7860:   Nginx Reverse Proxy (nginx.hf.conf)
+      ├── "/" → Static web frontend (/app/frontend)
+      └── "/webhooks/" → Proxy pass to internal Rasa (http://127.0.0.1:5005/webhooks/)
+  - Internal Port 5005: Rasa Server (rasa run --enable-api --cors "*" --port 5005)
+  - Internal Port 5055: Rasa Action Server (python -m rasa_sdk --actions actions --port 5055)
+  - Loopback Action URL: http://127.0.0.1:5055/webhook (endpoints.hf.yml)
+
+2. DEPLOYMENT-SPECIFIC FILES CREATED
+------------------------------------------------------------
+  - Dockerfile.hf:          Single-container Dockerfile overriding ENTRYPOINT [] for supervisor execution
+  - start-hf.sh:            Unix shell supervisor starting Action Server, Rasa Server, and Nginx
+  - nginx.hf.conf:          Nginx configuration listening on 7860 with frontend root and /webhooks/ proxy
+  - endpoints.hf.yml:       Rasa endpoint file pointing action_endpoint to http://127.0.0.1:5055/webhook
+  - scratch/test_hf_local_container.py: Verification script for port 7860 local single-container execution
+
+3. LOCAL HF DOCKER IMAGE BUILD RESULT
+------------------------------------------------------------
+Command: docker build -f Dockerfile.hf -t ecotraveladvisor-hf .
+Status:  SUCCESS (Exit code 0)
+Image:   ecotraveladvisor-hf:latest
+
+4. LOCAL PORT-7860 CONTAINER INTEGRATION TESTS
+------------------------------------------------------------
+Command: docker run -d -p 7860:7860 --env-file .env ecotraveladvisor-hf
+
+Tests Executed (scratch/test_hf_local_container.py):
+  1. Frontend Static Server (http://127.0.0.1:7860/):
+     Result: PASS (HTTP 200 OK, index.html served)
+  2. Nginx Proxy -> Rasa REST Webhook (http://127.0.0.1:7860/webhooks/rest/webhook):
+     Message: "hello"
+     Result: PASS (Bot greeting utterance received via Nginx reverse proxy)
+  3. Custom Action Execution (action_recommend_carbon_offsets):
+     Message: "recommend carbon offset programmes"
+     Result: PASS (Rasa server routed custom action to internal Action Server on 5055)
+  4. Sustainable Activities Custom Action:
+     Message: "recommend sustainable activities"
+     Result: PASS (action_recommend_activities executed successfully)
+  5. Trip Planning Form Flow Execution:
+     Flow: /plan_trip -> Paris -> 10 October to 15 October -> 800 euros -> high
+     Result: PASS (Form flow activated, slots filled, summary rendered)
+
+5. SECURITY AUDIT & SECRETS CONFIGURATION
+------------------------------------------------------------
+.dockerignore:            Included (.env, .venv/, __pycache__/, .git/, results/ excluded)
+Secrets in files/layers:  NONE (No hard-coded keys in Dockerfile.hf, start-hf.sh, or repo)
+Required Cloud Secrets:
+  - CLIMATIQ_API_KEY
+  - AMADEUS_API_KEY
+  - AMADEUS_API_SECRET
+
+6. CLOUD DEPLOYMENT STATUS & INSTRUCTIONS
+------------------------------------------------------------
+Cloud Push Status: BLOCKED (Hugging Face CLI authentication / Space creation required manually)
+
+Manual Steps to Complete Cloud Deployment on Hugging Face:
+1. Log in to https://huggingface.co
+2. Click "New Space" (https://huggingface.co/new-space)
+3. Enter Space Name (e.g., `ecotravel-advisor`)
+4. Select SDK: "Docker" (Blank / Dockerfile)
+5. Choose Visibility (Public or Private per preference)
+6. Go to Space Settings -> "Variables and secrets" -> "New secret"
+7. Add Secrets:
+     - CLIMATIQ_API_KEY
+     - AMADEUS_API_KEY
+     - AMADEUS_API_SECRET
+8. Clone the HF Space repository and push project files (including Dockerfile.hf renamed to Dockerfile):
+     git remote add hf https://huggingface.co/spaces/<your-username>/ecotravel-advisor
+     git push hf main
+
+============================================================
+CONCLUSION: LOCAL HF ARCHITECTURE VERIFIED — CLOUD DEPLOYMENT BLOCKED
+============================================================

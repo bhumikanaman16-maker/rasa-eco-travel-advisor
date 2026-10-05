@@ -1,0 +1,38 @@
+# ─── SECRETS ─────────────────────────────────────────────────
+# Real API keys – NEVER commit these
+.env
+
+# ─── PYTHON & VIRTUAL ENVIRONMENT ─────────────────────────────
+.venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ─── OBSOLETE MODELS (Only track the final verified model) ─────
+models/*.tar.gz
+!models/20261002-230550-drab-union.tar.gz
+
+# ─── RASA CACHE & LOGS ─────────────────────────────────────────
+.rasa/
+*.log
+nohup.out
+
+# ─── IDE & OPERATING SYSTEM ────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.user
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+
+# ─── TEMPORARY SCRATCH FILES ──────────────────────────────────
+scratch/

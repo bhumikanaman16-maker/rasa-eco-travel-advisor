@@ -1,0 +1,106 @@
+============================================================
+EcoTravel Advisor – Docker Runtime Verification Evidence
+MSc Assignment Stage 4: Docker Runtime Verification
+============================================================
+
+Timestamp: 2026-10-05T14:49:30+05:30
+Project Directory: C:\Users\sudar\Downloads\EcoTravelAdvisor
+
+1. DOCKER ENVIRONMENT STATUS
+------------------------------------------------------------
+Docker CLI Version:       Docker version 29.8.1, build 4a63305
+Docker Compose Version:   Docker Compose version v5.5.1
+Docker Daemon:            Running (Docker Desktop, Linux containers, WSL2)
+
+2. SECURITY & CONTEXT EXCLUSION AUDIT
+------------------------------------------------------------
+.dockerignore created:    Yes
+.env file excluded:       Yes (Explicitly listed in .dockerignore)
+Secrets in image layers:  No (Credentials passed strictly at runtime via env_file)
+Excluded paths:           .venv/, __pycache__/, *.pyc, .git/, results/, scratch/, tests/
+
+3. DOCKER COMPOSE CONFIGURATION VERIFICATION
+------------------------------------------------------------
+Command: docker compose config
+Result: VALID (Exit code 0)
+
+Configured Services:
+  - actions:
+      Image: ecotraveladvisor-actions:latest (Built from Dockerfile)
+      Ports: 5055:5055
+      Env File: .env
+      Volumes: ./actions -> /app/actions, ./data/external -> /app/data/external
+  - rasa:
+      Image: rasa/rasa:3.6.21-full
+      Ports: 5005:5005
+      Endpoints: /app/endpoints.yml (mounted from ./endpoints.docker.yml)
+      Volumes: ./models -> /app/models, ./config.yml -> /app/config.yml, ./domain.yml -> /app/domain.yml, ./data -> /app/data
+      Depends On: actions
+  - frontend:
+      Image: nginx:alpine
+      Ports: 8080:80
+      Volumes: ./frontend -> /usr/share/nginx/html (read-only)
+
+4. DOCKER COMPOSE BUILD VERIFICATION
+------------------------------------------------------------
+Command: docker compose build
+Status: SUCCESS (Exit code 0)
+Image Built: ecotraveladvisor-actions:latest
+
+5. CONTAINER STARTUP & STATUS (docker compose ps)
+------------------------------------------------------------
+Command: docker compose up -d
+Status: SUCCESS (Exit code 0)
+
+Containers Running:
+  - ecotraveladvisor_actions:  Up (Port 5055:5055)
+  - ecotraveladvisor_frontend: Up (Port 8080:80)
+  - ecotraveladvisor_rasa:     Up (Port 5005:5005)
+
+6. RUNTIME CONNECTIVITY & HEALTH TESTS
+------------------------------------------------------------
+A. Frontend Nginx Web Server (http://127.0.0.1:8080/):
+   Status: PASS (HTTP 200 OK, index.html served correctly)
+
+B. Rasa REST Webhook (http://127.0.0.1:5005/webhooks/rest/webhook):
+   Message: "hello"
+   Status: PASS (Bot greeting utterance returned successfully)
+
+C. Custom Action Execution (Rasa -> Actions inter-container network):
+   Message: "recommend carbon offset programmes"
+   Status: PASS (action_recommend_carbon_offsets executed successfully via http://actions:5055/webhook)
+
+D. Sustainable Activities Custom Action:
+   Message: "recommend sustainable activities"
+   Status: PASS (action_recommend_activities executed successfully via Docker network)
+
+E. Trip Planning Form Flow Execution:
+   Flow: /plan_trip -> Paris -> 10 October to 15 October -> 800 euros -> high
+   Status: PASS (Form activated, all slots populated, summary rendered without error)
+
+7. CONTAINER ENVIRONMENT VARIABLE BOOLEAN AUDIT
+------------------------------------------------------------
+Command: docker exec ecotraveladvisor_actions python -c "..."
+CLIMATIQ_API_KEY loaded:  True
+AMADEUS_API_KEY loaded:   True
+AMADEUS_API_SECRET loaded: True
+
+8. CONTAINER DEPENDENCY AUDIT
+------------------------------------------------------------
+Command: docker exec ecotraveladvisor_actions pip check
+Result: No broken requirements found.
+
+9. CONTAINER RESOURCE STATISTICS (docker stats --no-stream)
+------------------------------------------------------------
+ecotraveladvisor_rasa:     ~1.07 GiB RAM (14.05% limit) | 0.00% CPU
+ecotraveladvisor_actions:  ~37.6 MiB RAM (0.48% limit)  | 0.00% CPU
+ecotraveladvisor_frontend: ~13.8 MiB RAM (0.18% limit)  | 0.00% CPU
+
+10. CONTAINER SHUTDOWN
+------------------------------------------------------------
+Command: docker compose down
+Status: SUCCESS (Exit code 0, all containers and networks stopped cleanly)
+
+============================================================
+CONCLUSION: DOCKER RUNTIME VERIFIED (Exit Code 0)
+============================================================

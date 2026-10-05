@@ -1,0 +1,114 @@
+version: "3.1"
+
+nlu_evaluation_results:
+
+# This file contains NLU evaluation examples for rasa test nlu.
+# Each entry tests that a sample utterance is classified with the correct intent.
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi there
+      - good morning
+      - hey eco advisor
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - that's all thanks
+
+  - intent: plan_trip
+    examples: |
+      - I want to plan a trip
+      - help me plan a sustainable holiday
+      - I want an eco friendly trip
+      - plan a low carbon holiday for me
+
+  - intent: ask_carbon
+    examples: |
+      - calculate my carbon footprint
+      - how much carbon will this trip produce
+      - what are the emissions for this journey
+      - estimate my travel emissions
+
+  - intent: ask_transport
+    examples: |
+      - recommend sustainable transport
+      - which transport has lower emissions
+      - compare transport options
+      - what is the greenest transport option
+
+  - intent: ask_accommodation
+    examples: |
+      - recommend an eco friendly hotel
+      - find a green hotel
+      - where should I stay
+      - show me sustainable accommodation
+
+  - intent: ask_activities
+    examples: |
+      - recommend sustainable activities
+      - what eco friendly activities can I do
+      - suggest local eco tours
+      - show me local cultural experiences
+
+  - intent: ask_handover
+    examples: |
+      - I want to speak to a human
+      - connect me to a travel advisor
+      - I need a human advisor
+      - please escalate my request
+
+  - intent: thank_you
+    examples: |
+      - thank you
+      - thanks a lot
+      - that was very helpful
+      - brilliant thank you
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot
+      - are you human
+      - am I talking to an AI
+      - what are you
+
+  - intent: out_of_scope
+    examples: |
+      - tell me a joke
+      - who won the football match
+      - order food for me
+      - what is the meaning of life
+
+  - intent: affirm
+    examples: |
+      - yes
+      - yes please
+      - absolutely
+      - that works
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - not really
+      - no thanks
+
+  - intent: provide_origin
+    examples: |
+      - I am travelling from [London](origin)
+      - my journey starts in [Berlin](origin)
+      - starting from [Paris](origin)
+      - [Manchester](origin)
+
+  - intent: provide_transport_mode
+    examples: |
+      - [rail](transport_mode)
+      - [train](transport_mode)
+      - I want to travel by [train](transport_mode)
+      - [air](transport_mode)
+      - [car](transport_mode)
+      - I will be [flying](transport_mode)

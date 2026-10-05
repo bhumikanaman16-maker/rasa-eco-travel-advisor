@@ -1,0 +1,79 @@
+{
+  "_generic": [
+    "🚶 Walking tour of the historic old town and cultural heritage sites",
+    "🚲 Cycling to local markets, parks, and neighbourhoods",
+    "🎭 Attend a local cultural performance, street festival, or community event",
+    "🌿 Visit a community-run nature reserve, botanical garden, or eco-park",
+    "🛍️ Shop at a local artisan or farmers' market supporting local producers",
+    "🚌 Use public transport for all local journeys — bus, tram, metro, or ferry",
+    "🍽️ Dine at locally owned restaurants using seasonal, regional ingredients",
+    "🏛️ Visit a community museum, local heritage site, or independent gallery",
+    "🎨 Participate in a locally run craft or cultural workshop",
+    "🌊 Join an organised responsible wildlife watching or nature education tour"
+  ],
+
+  "paris": [
+    "🚲 Explore Paris by Vélib' bike-share — one of Europe's largest cycling networks",
+    "🛶 Take a Seine river cruise operated by Bateaux Parisiens using electric vessels",
+    "🌿 Visit the Bois de Boulogne or Parc de la Villette — large urban green spaces",
+    "🧀 Explore the Marché d'Aligre farmers' market for local seasonal produce",
+    "🏛️ Visit the Musée de l'Orangerie or Centre Pompidou for cultural immersion",
+    "🎭 Attend a performance at the Opéra Bastille — reachable by metro line 1 and 5",
+    "🚶 Walk along the Canal Saint-Martin on foot through local Parisian neighbourhoods",
+    "🍽️ Dine at a certified 'bistrot' using local French produce from Île-de-France farmers",
+    "🌱 Visit Belleville community gardens — urban growing spaces maintained by residents",
+    "📚 Explore Shakespeare & Company bookshop — a community cultural institution since 1951"
+  ],
+
+  "london": [
+    "🌳 Walk through Hyde Park, Hampstead Heath, or Richmond Park — free public spaces",
+    "🚲 Cycle along the Regent's Canal towpath from Paddington to Victoria Park",
+    "🏛️ Visit the free national museums: British Museum, Natural History Museum, Tate Modern",
+    "🌿 Explore Columbia Road Flower Market every Sunday morning — local growers",
+    "🚌 Hop on a Routemaster heritage bus — use Oyster card for carbon-aware travel",
+    "🍽️ Visit Borough Market for seasonal British produce from regional suppliers",
+    "🎭 Attend a production at the National Theatre on the South Bank",
+    "🔍 Explore the Lea Valley wetlands on the Queen Elizabeth Olympic Park",
+    "🧳 Join a free walking tour of East London street art and cultural diversity",
+    "♻️ Visit the Museum of London Docklands for local history and community stories"
+  ],
+
+  "berlin": [
+    "🚲 Rent a bicycle from Donkey Republic and cycle along the Berlin Wall trail",
+    "🌿 Visit Tempelhof Field — a former airport converted to a massive public park",
+    "🏛️ Explore Museum Island — five world-class museums on a UNESCO Heritage island",
+    "🛒 Shop at the Markthalle Neun Thursday street food market — local Berlin producers",
+    "🎭 Attend a performance at the Berliner Philharmonie or Volksbühne",
+    "🚊 Use Berlin's exceptional public transport — U-Bahn, S-Bahn, and tram network",
+    "🌱 Visit Prinzessinnengärten community urban garden in Kreuzberg",
+    "🧳 Join a free walking tour of Prenzlauer Berg neighbourhood history",
+    "🎨 Explore the East Side Gallery — 1.3 km of Berlin Wall outdoor murals",
+    "♻️ Discover Berlin's renowned second-hand and vintage market culture"
+  ],
+
+  "amsterdam": [
+    "🚲 Cycle everywhere — Amsterdam is the world's most cycle-friendly city",
+    "⛵ Take a pedal boat along the historic canals — zero-emission exploration",
+    "🌿 Visit the Hortus Botanicus — one of the world's oldest botanical gardens (1638)",
+    "🏛️ Explore the Rijksmuseum and the Anne Frank House for history and culture",
+    "🛒 Browse the Albert Cuypmarkt for local Dutch produce and artisan goods",
+    "🚌 Use GVB trams and buses — Amsterdam's comprehensive public transport network",
+    "🍺 Visit a local Amsterdam microbrewery for craft beverages and community culture",
+    "🌱 Explore the Amsterdam urban food forest initiatives in Westerpark",
+    "🎶 Attend a concert at the Concertgebouw — world-renowned classical music venue",
+    "♻️ Visit the EYE Filmmuseum — sustainable waterfront architecture and Dutch cinema"
+  ],
+
+  "barcelona": [
+    "🚶 Walk the complete length of La Rambla — but also explore the quieter Gothic Quarter lanes",
+    "🏛️ Visit Park Güell and the Sagrada Família — Gaudí's sustainable organic architecture",
+    "🚌 Use the Barcelona Metro and TMB bus network — very affordable and extensive",
+    "🌿 Visit the Parc de la Ciutadella for relaxation in the city's main green lung",
+    "🛒 Explore the Mercat de Sant Antoni — beautifully restored 19th-century food market",
+    "🚲 Cycle the beachfront promenade from Barceloneta to Poblenou",
+    "🎭 Attend a Castellers human tower performance — a UNESCO Intangible Heritage tradition",
+    "🍽️ Dine at a restaurant serving traditional Catalan cuisine with local seasonal ingredients",
+    "🎨 Visit the Fundació Joan Miró or MACBA for world-class contemporary art",
+    "🌊 Join a sustainable snorkelling tour of the protected Parc Natural del Garraf coastline"
+  ]
+}
