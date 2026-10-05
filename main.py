@@ -81,7 +81,7 @@ def wait_for_url(url, description, timeout=120):
 
 def start_action_server():
     print("\n[2/5] Starting Rasa Action Server (Port 5055)...")
-    cmd = [RASA_EXE, "run", "actions"]
+    cmd = [PYTHON_EXE, "-m", "rasa_sdk", "--actions", "actions"]
     p = subprocess.Popen(cmd, cwd=BASE_DIR)
     processes.append(("Action Server", p))
     wait_for_url("http://localhost:5055/health", "Action Server")
@@ -139,12 +139,14 @@ def main():
         print("=" * 65)
         print("Press Ctrl+C at any time to stop all servers gracefully.\n")
         
+        warned = set()
         while True:
             time.sleep(1)
             # Check if any process terminated unexpectedly
             for name, p in processes:
-                if p.poll() is not None:
+                if p.poll() is not None and name not in warned:
                     print(f"\n* Warning: {name} exited with code {p.returncode}.")
+                    warned.add(name)
             
     except KeyboardInterrupt:
         cleanup()
