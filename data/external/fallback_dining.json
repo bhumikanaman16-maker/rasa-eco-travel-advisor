@@ -1,0 +1,168 @@
+{
+  "_generic": [
+    {
+      "name": "Local Farmers' Market & Food Hall",
+      "type": "Market / Local Produce",
+      "specialty": "Zero-mile seasonal produce, artisanal cheeses, organic bread, and homemade specialties",
+      "eco_features": "Zero-waste packaging, directly supports regional farmers and growers",
+      "price": "£-££"
+    },
+    {
+      "name": "Green Roots Community Cafe",
+      "type": "Plant-Based Cafe",
+      "specialty": "100% plant-based brunch, organic fair-trade coffee, sourdough toasts, and raw treats",
+      "eco_features": "Composts 100% of organic waste, solar-powered kitchen, no single-use plastics",
+      "price": "££"
+    },
+    {
+      "name": "The Harvest Table",
+      "type": "Farm-to-Table Restaurant",
+      "specialty": "Hyper-seasonal tasting menu showcasing ingredients sourced within 50 km",
+      "eco_features": "Certified organic, zero-waste kitchen philosophy, biodynamic local wine pairings",
+      "price": "£££"
+    },
+    {
+      "name": "Earth Bowl Wholefoods",
+      "type": "Organic Quick Bites",
+      "specialty": "Nourishing grain bowls, fermented kimchi, fresh cold-pressed botanical juices",
+      "eco_features": "Reusable container discount, 100% biodegradable takeaway packaging",
+      "price": "£"
+    }
+  ],
+  "paris": [
+    {
+      "name": "Le Potager de Charlotte",
+      "type": "Gourmet Plant-Based",
+      "specialty": "Refined gourmet vegan cuisine, chickpea pancake with avocado, seasonal roasted squash",
+      "eco_features": "100% organic and plant-based, family-run, zero food-waste policy",
+      "price": "€€€"
+    },
+    {
+      "name": "Marché des Enfants Rouges",
+      "type": "Historic Covered Market",
+      "specialty": "Oldest food market in Paris (1615), artisanal French crepes, organic Lebanese and Moroccan stalls",
+      "eco_features": "Direct artisan-to-consumer sourcing, minimal transport carbon footprint",
+      "price": "€€"
+    },
+    {
+      "name": "Aujourd'hui Demain",
+      "type": "Eco Concept Store & Cafe",
+      "specialty": "Vegan burgers, specialty matcha, oat pastries, and ethical sustainable groceries",
+      "eco_features": "Fair-trade certified ingredients, ethical vegan supply chain",
+      "price": "€€"
+    },
+    {
+      "name": "Septime",
+      "type": "Michelin Green Star",
+      "specialty": "Progressive neo-bistro menu driven by sustainable agriculture and natural wines",
+      "eco_features": "Michelin Green Star for sustainable gastronomy, 99% French organic terroir sourcing",
+      "price": "€€€€"
+    }
+  ],
+  "london": [
+    {
+      "name": "Rovi by Ottolenghi (Fitzrovia)",
+      "type": "Vegetable-Forward Dining",
+      "specialty": "Fermentation-forward vegetable dishes, fire-cooked seasonal produce, dynamic spice profiles",
+      "eco_features": "Focus on low-impact whole-animal and whole-plant cooking, zero-waste bar program",
+      "price": "£££"
+    },
+    {
+      "name": "Borough Market Artisans",
+      "type": "Sustainable Food Market",
+      "specialty": "British heritage oysters, artisan sourdough, regenerative dairy, and organic orchard ciders",
+      "eco_features": "Strict zero-to-landfill market policy, surplus food redistribution with Plan Zheroes",
+      "price": "£-££"
+    },
+    {
+      "name": "Mildreds (Soho / Camden)",
+      "type": "Creative Plant-Based",
+      "specialty": "Global vegan soul food: Sri Lankan curry, kimchi fried rice, sticky toffee pudding",
+      "eco_features": "Pioneer of ethical plant-based dining since 1988, 100% renewable energy powered",
+      "price": "££"
+    },
+    {
+      "name": "Silvo Zero-Waste Eatery",
+      "type": "Zero-Waste Dining",
+      "specialty": "Milled-on-site ancient grains, foraged wild mushrooms, compostable menu cycle",
+      "eco_features": "Zero waste output, upcycled furnishings, closed-loop composting",
+      "price": "£££"
+    }
+  ],
+  "berlin": [
+    {
+      "name": "Frea (Mitte)",
+      "type": "Full Zero-Waste Vegan",
+      "specialty": "Handmade sourdough pasta, fermented cashew creams, hazelnut ganache",
+      "eco_features": "World's first zero-waste vegan restaurant with in-house composting machine ('Gitti')",
+      "price": "€€€"
+    },
+    {
+      "name": "Markthalle Neun (Kreuzberg)",
+      "type": "Artisanal Heritage Market",
+      "specialty": "Regional Brandenburg cheeses, wild game sausages, sourdough pretzels, craft ferments",
+      "eco_features": "Preserves regional culinary heritage and sustainable smallholder farming",
+      "price": "€-€€"
+    },
+    {
+      "name": "Kopps (Mitte)",
+      "type": "Upscale Vegan Fine Dining",
+      "specialty": "Multi-course seasonal plant tasting menu with biodynamic wine pairings",
+      "eco_features": "100% plant-based, 100% regional organic produce from Brandenburg farmers",
+      "price": "€€€€"
+    },
+    {
+      "name": "Brammibal's Donuts",
+      "type": "100% Vegan Bakery",
+      "specialty": "Handcrafted plant-based donuts, fair-trade oat lattes, seasonal fruit glazes",
+      "eco_features": "Plant-based, plastic-free packaging, monthly charity environmental donations",
+      "price": "€"
+    }
+  ],
+  "amsterdam": [
+    {
+      "name": "De Kas",
+      "type": "Greenhouse Farm-to-Fork",
+      "specialty": "Michelin Green Star menu harvested from their own greenhouse on the same morning",
+      "eco_features": "Zero food-miles: vegetables harvested hours before serving from Park Frankendael",
+      "price": "€€€€"
+    },
+    {
+      "name": "Meatless District",
+      "type": "Modern Vegan Bistro",
+      "specialty": "Artisan vegan cheeses, smoked 'salmon' on seeded rye, truffle mushroom burgers",
+      "eco_features": "100% plant-based, cruelty-free, energy-efficient induction kitchen",
+      "price": "€€"
+    },
+    {
+      "name": "Instock",
+      "type": "Surplus Food Rescue Dining",
+      "specialty": "Creative daily chefs' menus created from rescued surplus supermarket produce",
+      "eco_features": "Has rescued over 1 million kilograms of food from being wasted",
+      "price": "€€"
+    }
+  ],
+  "barcelona": [
+    {
+      "name": "Rasoterra (Gothic Quarter)",
+      "type": "Slow Food Vegetarian",
+      "specialty": "Catalan vegetable tapas, organic seasonal paella, natural organic Catalan wines",
+      "eco_features": "Certified Slow Food Km 0, 100% organic local agriculture, no frozen ingredients",
+      "price": "€€€"
+    },
+    {
+      "name": "Teresa Carles",
+      "type": "Healthy Flex-Vegan",
+      "specialty": "Artisanal raw salads, fresh eggless pasta, wild mushroom risotto, kombucha on tap",
+      "eco_features": "Pioneer of healthy vegetarianism in Catalonia since 1979, B-Corp certified",
+      "price": "€€"
+    },
+    {
+      "name": "Mercat de la Boqueria / Sant Antoni",
+      "type": "Local Fresh Market",
+      "specialty": "Fresh figs, Marcona almonds, Spanish olives, regional artisan bread",
+      "eco_features": "Local producers, minimal packaging, walkability access in city center",
+      "price": "€-€€"
+    }
+  ]
+}

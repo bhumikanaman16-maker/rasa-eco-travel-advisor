@@ -13,6 +13,9 @@ nlu:
       - hey there
       - hi eco advisor
       - I need some travel help
+      - greetings
+      - start chat
+      - hello assistant
 
   - intent: goodbye
     examples: |
@@ -26,6 +29,7 @@ nlu:
       - see you
       - catch you later
       - have a nice day
+      - talk to you later
 
   - intent: affirm
     examples: |
@@ -39,6 +43,9 @@ nlu:
       - okay
       - yes please
       - that works
+      - perfect
+      - let's do it
+      - exactly
 
   - intent: deny
     examples: |
@@ -52,6 +59,7 @@ nlu:
       - not now
       - I would rather not
       - no please
+      - skip this
 
   - intent: plan_trip
     examples: |
@@ -67,6 +75,9 @@ nlu:
       - can you recommend a sustainable travel plan
       - I am looking for an eco tourism trip
       - help me arrange a low carbon holiday
+      - start trip planning
+      - let's plan a journey
+      - design my vacation
 
   - intent: provide_destination
     examples: |
@@ -86,6 +97,28 @@ nlu:
       - I am planning to visit [Stockholm](destination)
       - my destination is [Dubai](destination)
       - I want to travel to [Singapore](destination)
+      - [Tokyo](destination)
+      - [Kyoto](destination)
+      - [Madrid](destination)
+      - [Costa Rica](destination)
+      - [Edinburgh](destination)
+
+  - intent: provide_duration
+    examples: |
+      - [3 days](trip_duration)
+      - [5 days](trip_duration)
+      - [7 days](trip_duration)
+      - [1 week](trip_duration)
+      - [10 days](trip_duration)
+      - [2 weeks](trip_duration)
+      - [4 days](trip_duration)
+      - [6 days](trip_duration)
+      - [weekend getaway](trip_duration)
+      - for [3 days](trip_duration)
+      - stay for [5 days](trip_duration)
+      - we will be there for [a week](trip_duration)
+      - around [10 days](trip_duration)
+      - [14 days](trip_duration)
 
   - intent: provide_dates
     examples: |
@@ -99,6 +132,50 @@ nlu:
       - my holiday is [3 March to 8 March](travel_dates)
       - travel dates are [15 April to 20 April](travel_dates)
       - I am planning to travel [from 6 June to 11 June](travel_dates)
+      - in [Summer](travel_dates)
+      - in [Spring](travel_dates)
+      - during [Autumn](travel_dates)
+      - [next week](travel_dates)
+
+  - intent: provide_party
+    examples: |
+      - [Solo traveler](travel_party)
+      - [Solo](travel_party)
+      - just me
+      - traveling alone
+      - [Couple](travel_party)
+      - me and my partner
+      - romantic trip for two
+      - [Family with kids](travel_party)
+      - family with two children
+      - traveling with family
+      - [Group of friends](travel_party)
+      - 4 friends traveling together
+      - group of 3 people
+
+  - intent: provide_style
+    examples: |
+      - I like [Nature & Wildlife](trip_style)
+      - [Nature and hiking](trip_style)
+      - [Culture & History](trip_style)
+      - museums and historical heritage
+      - [Foodie & Culinary](trip_style)
+      - we love organic food and wine
+      - [Outdoor Adventure](trip_style)
+      - active sports and cycling
+      - [Eco-Wellness & Relaxation](trip_style)
+      - slow travel and spa relaxation
+      - [Hidden gems and local culture](trip_style)
+
+  - intent: provide_pace
+    examples: |
+      - [Relaxed](travel_pace)
+      - slow and leisurely pace
+      - [Balanced](travel_pace)
+      - moderate pace
+      - [Action-packed](travel_pace)
+      - fast-paced seeing everything
+      - take it easy with lots of downtime
 
   - intent: provide_budget
     examples: |
@@ -112,6 +189,10 @@ nlu:
       - I can afford [900 euros](budget)
       - around [750 pounds](budget)
       - I have a budget of [2000 dollars](budget)
+      - [Budget / Backpacker](budget)
+      - [Mid-Range Comfort](budget)
+      - [Luxury Eco-Lodge](budget)
+      - around [3000 euros](budget)
 
   - intent: provide_sustainability
     examples: |
@@ -127,6 +208,7 @@ nlu:
       - price is more important than sustainability
       - choose environmentally friendly options
       - I prefer low carbon travel
+      - maximum eco friendly
 
   - intent: provide_origin
     examples: |
@@ -142,9 +224,9 @@ nlu:
       - [Delhi](origin)
       - [Dubai](origin)
       - [Singapore](origin)
-      - I am travelling from [Manchester](origin)
-      - the trip begins in [Barcelona](origin)
-      - my departure city is [Vienna](origin)
+      - [Manchester](origin)
+      - [Vienna](origin)
+      - [New York](origin)
 
   - intent: provide_transport_mode
     examples: |
@@ -165,6 +247,78 @@ nlu:
       - calculate it for [air](transport_mode)
       - I am [flying](transport_mode)
       - use a [flight](transport_mode)
+
+  - intent: ask_itinerary
+    examples: |
+      - create a day by day itinerary
+      - give me a 3-day itinerary for [Paris](destination)
+      - show me the daily schedule
+      - what is the itinerary for my trip
+      - design a 5 day travel schedule
+      - day by day plan for [Berlin](destination)
+      - what should I do on day 1
+      - can you generate a detailed daily itinerary
+      - give me an itinerary for [Amsterdam](destination)
+      - show my travel plan by day
+      - full daily schedule
+      - recommend an itinerary for [London](destination)
+      - build an itinerary for [7 days](trip_duration)
+
+  - intent: ask_dining
+    examples: |
+      - recommend green dining options
+      - where can I find vegan and organic restaurants
+      - show farm to table restaurants in [Paris](destination)
+      - sustainable food options in [Berlin](destination)
+      - where should I eat in [London](destination)
+      - recommend local food markets
+      - zero waste dining spots
+      - plant based food guide
+      - best organic cafes in [Amsterdam](destination)
+      - where to find sustainable dining
+
+  - intent: ask_packing_tips
+    examples: |
+      - what should I pack for my trip
+      - give me an eco friendly packing checklist
+      - zero waste packing tips
+      - what essentials should I bring
+      - sustainable packing list
+      - what to pack for [Paris](destination)
+      - packing checklist for sustainable travel
+      - how to pack light and zero waste
+      - recommend eco toiletries and gear
+
+  - intent: ask_eco_tips
+    examples: |
+      - give me sustainable travel tips
+      - how can I reduce my environmental impact while travelling
+      - tips for zero waste travel
+      - best practices for eco tourism
+      - how to be a responsible tourist
+      - leave no trace travel advice
+      - how to travel green
+      - eco friendly travel guide
+
+  - intent: ask_budget_breakdown
+    examples: |
+      - how should I divide my budget
+      - budget breakdown for sustainable travel
+      - how to allocate [1000 euros](budget)
+      - what will accommodation and food cost
+      - give me a cost estimation
+      - is my budget enough for [5 days](trip_duration)
+      - sustainable budget advice
+
+  - intent: ask_weather
+    examples: |
+      - what is the best time of year to visit
+      - when is the eco season to travel
+      - weather forecast and best seasons
+      - what season has fewer crowds
+      - best month to visit [Paris](destination)
+      - climate advice for [Amsterdam](destination)
+      - when should I go
 
   - intent: ask_transport
     examples: |

@@ -29,25 +29,35 @@ rules:
       - active_loop: null
       - action: action_calculate_carbon
 
-  - rule: Respond to goodbye
+  - rule: Generate itinerary
     steps:
-      - intent: goodbye
-      - action: utter_goodbye
+      - intent: ask_itinerary
+      - action: action_generate_itinerary
 
-  - rule: Respond to thank you
+  - rule: Recommend dining
     steps:
-      - intent: thank_you
-      - action: utter_thank_you
+      - intent: ask_dining
+      - action: action_recommend_dining
 
-  - rule: Respond to bot challenge
+  - rule: Recommend packing tips
     steps:
-      - intent: bot_challenge
-      - action: utter_iamabot
+      - intent: ask_packing_tips
+      - action: action_recommend_packing
 
-  - rule: Handle out of scope request
+  - rule: Provide eco tips
     steps:
-      - intent: out_of_scope
-      - action: utter_out_of_scope
+      - intent: ask_eco_tips
+      - action: action_provide_eco_tips
+
+  - rule: Provide budget breakdown
+    steps:
+      - intent: ask_budget_breakdown
+      - action: action_budget_breakdown
+
+  - rule: Provide weather advice
+    steps:
+      - intent: ask_weather
+      - action: action_weather_advice
 
   - rule: Recommend transport
     steps:
@@ -78,6 +88,26 @@ rules:
     steps:
       - intent: ask_handover
       - action: action_human_handover
+
+  - rule: Respond to goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Respond to thank you
+    steps:
+      - intent: thank_you
+      - action: utter_thank_you
+
+  - rule: Respond to bot challenge
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+
+  - rule: Handle out of scope request
+    steps:
+      - intent: out_of_scope
+      - action: utter_out_of_scope
 
   - rule: Handle NLU fallback
     steps:

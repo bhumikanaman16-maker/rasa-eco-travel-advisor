@@ -3,149 +3,369 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EcoTravel Advisor – AI-powered conversational assistant for sustainable tourism planning. Plan eco-friendly trips, calculate carbon footprints, and discover green accommodation." />
+  <meta name="description" content="EcoTravel Advisor – Professional conversational platform for sustainable journey planning, bespoke itineraries, farm-to-table dining, and carbon footprint intelligence." />
   <title>EcoTravel Advisor – Sustainable Journey Planner</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ─── HEADER ─────────────────────────────────────────────────── -->
-  <header class="site-header" role="banner">
-    <div class="header-inner">
-      <div class="brand">
-        <span class="brand-icon" aria-hidden="true">🌱</span>
+  <!-- ─── AMBIENT BACKGROUND CANVAS ─────────────────────────── -->
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="aurora aurora-1"></div>
+    <div class="aurora aurora-2"></div>
+    <div class="aurora aurora-3"></div>
+    <div class="grain-overlay"></div>
+  </div>
+
+  <!-- ─── APP SHELL ─────────────────────────────────────────── -->
+  <div class="app-shell">
+
+    <!-- ─── SIDEBAR NAVIGATION ────────────────────────────────── -->
+    <aside class="sidebar" role="navigation" aria-label="Main navigation">
+
+      <!-- Brand -->
+      <div class="sidebar-brand">
+        <div class="brand-mark">
+          <svg class="brand-logo-svg" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <!-- Globe outline -->
+            <circle cx="24" cy="24" r="21" stroke="url(#globe-grad)" stroke-width="2" fill="none"/>
+            <!-- Horizontal meridian -->
+            <ellipse cx="24" cy="24" rx="21" ry="8" stroke="url(#globe-grad)" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <!-- Vertical meridian -->
+            <ellipse cx="24" cy="24" rx="8" ry="21" stroke="url(#globe-grad)" stroke-width="1.2" fill="none" opacity="0.6"/>
+            <!-- Leaf shape -->
+            <path d="M16 30C16 20 24 12 34 14C32 24 24 32 16 30Z" fill="url(#leaf-grad)" opacity="0.9"/>
+            <!-- Leaf vein -->
+            <path d="M19 28C23 24 28 19 32 16" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- Small accent dot -->
+            <circle cx="34" cy="14" r="2" fill="url(#amber-grad)" opacity="0.8"/>
+            <defs>
+              <linearGradient id="globe-grad" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0D9488"/>
+                <stop offset="1" stop-color="#14B8A6"/>
+              </linearGradient>
+              <linearGradient id="leaf-grad" x1="16" y1="12" x2="34" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#0D9488"/>
+                <stop offset="0.5" stop-color="#14B8A6"/>
+                <stop offset="1" stop-color="#2DD4BF"/>
+              </linearGradient>
+              <radialGradient id="amber-grad" cx="0.5" cy="0.5" r="0.5">
+                <stop stop-color="#FBBF24"/>
+                <stop offset="1" stop-color="#F59E0B"/>
+              </radialGradient>
+            </defs>
+          </svg>
+          <div class="brand-glow"></div>
+        </div>
         <div class="brand-text">
-          <h1 class="brand-title">EcoTravel Advisor</h1>
-          <p class="brand-tagline">Sustainable journeys, smarter choices</p>
+          <span class="brand-name">Eco<span class="brand-accent">Travel</span></span>
+          <span class="brand-label">Advisor AI</span>
         </div>
       </div>
-      <nav class="header-nav" aria-label="Primary navigation">
-        <button class="nav-btn" id="btn-plan-trip"   aria-label="Plan a sustainable trip">🗺️ Plan Trip</button>
-        <button class="nav-btn" id="btn-carbon"      aria-label="Calculate carbon footprint">🌍 Carbon</button>
-        <button class="nav-btn" id="btn-offsets"     aria-label="Explore carbon offset options">🌱 Offsets</button>
-        <button class="nav-btn" id="btn-hotels"      aria-label="Find eco accommodation">🏨 Hotels</button>
-        <button class="nav-btn" id="btn-flights"     aria-label="Search flight options">✈️ Flights</button>
-        <button class="nav-btn" id="btn-transport"   aria-label="Compare transport options">🚆 Transport</button>
+
+      <!-- Nav Items -->
+      <nav class="sidebar-nav" aria-label="Feature shortcuts">
+        <span class="nav-section-label">Consultation</span>
+        <button class="sidebar-btn active" id="btn-plan-trip" title="Full Sustainable Trip Consultation" aria-label="Plan a sustainable trip">
+          <span class="sidebar-icon">🌍</span>
+          <span class="sidebar-label">Plan Trip</span>
+        </button>
+        <button class="sidebar-btn" id="btn-itinerary" title="Day-by-Day Bespoke Itinerary" aria-label="Generate custom itinerary">
+          <span class="sidebar-icon">🗓️</span>
+          <span class="sidebar-label">Itinerary</span>
+        </button>
+        <button class="sidebar-btn" id="btn-dining" title="Farm-to-Table & Green Dining" aria-label="Discover green dining">
+          <span class="sidebar-icon">🥗</span>
+          <span class="sidebar-label">Dining</span>
+        </button>
+        <button class="sidebar-btn" id="btn-packing" title="Zero-Waste Packing Checklist" aria-label="View packing checklist">
+          <span class="sidebar-icon">🎒</span>
+          <span class="sidebar-label">Packing</span>
+        </button>
+
+        <span class="nav-section-label" style="margin-top: 8px;">Intelligence</span>
+        <button class="sidebar-btn" id="btn-transport" title="Low-Carbon Transport Comparison" aria-label="Compare transport options">
+          <span class="sidebar-icon">🚆</span>
+          <span class="sidebar-label">Transport</span>
+        </button>
+        <button class="sidebar-btn" id="btn-hotels" title="Certified Green Hotels & Lodges" aria-label="Find eco accommodation">
+          <span class="sidebar-icon">🏨</span>
+          <span class="sidebar-label">Hotels</span>
+        </button>
+        <button class="sidebar-btn" id="btn-activities" title="Sustainable & Cultural Activities" aria-label="Discover sustainable activities">
+          <span class="sidebar-icon">🌿</span>
+          <span class="sidebar-label">Activities</span>
+        </button>
+        <button class="sidebar-btn" id="btn-carbon" title="Live Climatiq Carbon Calculation" aria-label="Calculate carbon footprint">
+          <span class="sidebar-icon">📊</span>
+          <span class="sidebar-label">Carbon</span>
+        </button>
+        <button class="sidebar-btn" id="btn-offsets" title="Verified Carbon Offset Standards" aria-label="Explore carbon offset options">
+          <span class="sidebar-icon">🌱</span>
+          <span class="sidebar-label">Offsets</span>
+        </button>
+        <button class="sidebar-btn" id="btn-eco-tips" title="Zero-Waste & Responsible Travel Tips" aria-label="Read eco travel tips">
+          <span class="sidebar-icon">💡</span>
+          <span class="sidebar-label">Eco Tips</span>
+        </button>
       </nav>
-    </div>
-  </header>
 
-  <!-- ─── MAIN CONTENT ───────────────────────────────────────────── -->
-  <main class="main-layout" role="main">
-
-    <!-- Left panel: info cards -->
-    <aside class="info-panel" aria-label="Quick information">
-
-      <!-- Location card -->
-      <section class="info-card location-card" aria-labelledby="location-card-title">
-        <h2 id="location-card-title" class="card-title">📍 Your Location</h2>
-        <p class="card-body" id="location-display">Location not set.</p>
-        <div class="location-actions">
-          <button class="btn-primary" id="btn-use-location" aria-label="Use my current GPS location">
-            📡 Use My Location
-          </button>
-          <button class="btn-secondary" id="btn-manual-location" aria-label="Enter location manually">
-            ✏️ Enter Manually
-          </button>
+      <!-- Sidebar Status -->
+      <div class="sidebar-footer">
+        <div class="system-status">
+          <span class="status-beacon"></span>
+          <span class="status-label">Rasa AI Active</span>
         </div>
-        <div class="manual-location-form hidden" id="manual-location-form" role="region" aria-label="Manual location entry">
-          <label for="manual-location-input" class="sr-only">Enter your location</label>
-          <input
-            type="text"
-            id="manual-location-input"
-            class="location-input"
-            placeholder="e.g. London, UK"
-            aria-label="Enter location manually"
-          />
-          <button class="btn-primary" id="btn-set-manual-location">Set Location</button>
-        </div>
-        <p class="privacy-note" id="location-privacy-note">
-          ⚠️ Location data is used only to assist your trip planning query. It is not stored permanently.
-        </p>
-      </section>
-
-      <!-- Carbon indicator legend -->
-      <section class="info-card legend-card" aria-labelledby="legend-title">
-        <h2 id="legend-title" class="card-title">🎨 Emissions Guide</h2>
-        <ul class="legend-list" role="list">
-          <li class="legend-item">
-            <span class="legend-dot green" aria-hidden="true"></span>
-            <span><strong>Lower emissions</strong> — below 50 kg CO₂e</span>
-          </li>
-          <li class="legend-item">
-            <span class="legend-dot amber" aria-hidden="true"></span>
-            <span><strong>Moderate emissions</strong> — 50–150 kg CO₂e</span>
-          </li>
-          <li class="legend-item">
-            <span class="legend-dot red" aria-hidden="true"></span>
-            <span><strong>Higher emissions</strong> — above 150 kg CO₂e</span>
-          </li>
-        </ul>
-        <p class="legend-note">
-          Indicators are comparative guides, not universal thresholds. All values are per passenger, one-way.
-        </p>
-      </section>
-
-      <!-- Handover status -->
-      <section class="info-card handover-card hidden" id="handover-status-card" aria-labelledby="handover-title" aria-live="polite">
-        <h2 id="handover-title" class="card-title">👤 Advisor Status</h2>
-        <p id="handover-status-text" class="card-body">Human advisor requested. Your conversation context has been prepared for review.</p>
-      </section>
-
+        <div class="sidebar-badge">v3.6</div>
+      </div>
     </aside>
 
-    <!-- Chat panel -->
-    <section class="chat-panel" aria-labelledby="chat-panel-title">
-      <h2 id="chat-panel-title" class="sr-only">Conversation</h2>
+    <!-- ─── MAIN CONTENT AREA ─────────────────────────────────── -->
+    <div class="content-area">
 
-      <!-- Chat messages -->
-      <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-atomic="false" aria-label="Chat conversation">
-        <!-- Welcome message injected by JS -->
-      </div>
+      <!-- Top Bar -->
+      <header class="top-bar" role="banner">
+        <div class="top-bar-left">
+          <h1 class="page-title">Sustainable Journey Intelligence</h1>
+          <span class="top-bar-badge">Consultant AI</span>
+        </div>
+        <div class="top-bar-right">
+          <button class="pill-btn" id="btn-new-trip" title="Start a fresh consultation">
+            <span>🔄 New Consultation</span>
+          </button>
+          <div class="stat-pill">
+            <span class="pill-dot"></span>
+            <span>Climatiq Engine</span>
+          </div>
+          <div class="stat-pill">
+            <span class="pill-dot dot-amber"></span>
+            <span>Amadeus API</span>
+          </div>
+        </div>
+      </header>
 
-      <!-- Quick reply chips -->
-      <div class="quick-replies" id="quick-replies" role="group" aria-label="Quick reply options">
-        <!-- Populated dynamically by JS -->
-      </div>
+      <!-- Main Grid -->
+      <main class="main-grid" role="main">
 
-      <!-- Input row -->
-      <div class="chat-input-row">
-        <label for="user-input" class="sr-only">Type your message</label>
-        <input
-          type="text"
-          id="user-input"
-          class="chat-input"
-          placeholder="Type a message…"
-          autocomplete="off"
-          aria-label="Chat message input"
-          aria-describedby="input-help"
-          maxlength="500"
-        />
-        <button class="send-btn" id="send-btn" aria-label="Send message">
-          <span aria-hidden="true">➤</span>
-        </button>
-      </div>
-      <p id="input-help" class="sr-only">Press Enter or click Send to send your message.</p>
+        <!-- ─── LEFT: CONTROL DOCK ──────────────────────────── -->
+        <aside class="control-dock" aria-label="Quick Control Dock">
 
-    </section>
+          <!-- Active Trip Profile Widget -->
+          <section class="dock-card profile-card" aria-labelledby="profile-card-title">
+            <div class="dock-card-header">
+              <div class="dock-card-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/><path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <h2 id="profile-card-title" class="dock-card-title">Live Trip Profile</h2>
+                <span class="dock-card-tag tag-live" id="profile-status-badge">In Progress</span>
+              </div>
+            </div>
+            <div class="profile-details" id="profile-details">
+              <div class="profile-item"><span class="p-label">📍 Destination:</span> <span class="p-val" id="prof-dest">Not set</span></div>
+              <div class="profile-item"><span class="p-label">🗓️ Duration:</span> <span class="p-val" id="prof-dur">Not set</span></div>
+              <div class="profile-item"><span class="p-label">👥 Party:</span> <span class="p-val" id="prof-party">Not set</span></div>
+              <div class="profile-item"><span class="p-label">✨ Style:</span> <span class="p-val" id="prof-style">Not set</span></div>
+              <div class="profile-item"><span class="p-label">💰 Budget:</span> <span class="p-val" id="prof-budget">Not set</span></div>
+              <div class="profile-item"><span class="p-label">🌱 Priority:</span> <span class="p-val" id="prof-eco">High</span></div>
+            </div>
+          </section>
 
-  </main>
+          <!-- Location Hub Card -->
+          <section class="dock-card" aria-labelledby="location-card-title">
+            <div class="dock-card-header">
+              <div class="dock-card-icon">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <h2 id="location-card-title" class="dock-card-title">Traveler Origin</h2>
+                <span class="dock-card-tag">GPS / Hub</span>
+              </div>
+            </div>
+            <p class="dock-card-body" id="location-display">Location not set.</p>
+            <div class="location-actions">
+              <button class="btn-glow" id="btn-use-location" aria-label="Use my current GPS location">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="btn-svg"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                Use GPS
+              </button>
+              <button class="btn-outline" id="btn-manual-location" aria-label="Enter location manually">
+                <svg viewBox="0 0 20 20" fill="currentColor" class="btn-svg"><path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z"/></svg>
+                Manual
+              </button>
+            </div>
+            <div class="manual-location-form hidden" id="manual-location-form" role="region" aria-label="Manual location entry">
+              <label for="manual-location-input" class="sr-only">Enter your location</label>
+              <input
+                type="text"
+                id="manual-location-input"
+                class="form-input"
+                placeholder="e.g. London, UK"
+                aria-label="Enter location manually"
+              />
+              <button class="btn-glow btn-sm" id="btn-set-manual-location">Set Location</button>
+            </div>
+            <p class="privacy-note" id="location-privacy-note">
+              <svg viewBox="0 0 20 20" fill="currentColor" class="note-icon"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+              Location is used solely for route distance & carbon calculation.
+            </p>
+          </section>
 
-  <!-- ─── FOOTER ─────────────────────────────────────────────────── -->
-  <footer class="site-footer" role="contentinfo">
-    <p>
-      EcoTravel Advisor · MSc Assignment Project · Built with
-      <a href="https://rasa.com" target="_blank" rel="noopener noreferrer">Rasa Open Source</a>
-      · Carbon data by
-      <a href="https://climatiq.io" target="_blank" rel="noopener noreferrer">Climatiq</a>
-    </p>
-    <p class="footer-disclaimer">
-      Carbon estimates are indicative figures only. Hotel and activity data may include local demonstration records.
-      Always verify information directly with providers.
-    </p>
-  </footer>
+          <!-- Carbon Threshold Legend -->
+          <section class="dock-card" aria-labelledby="legend-title">
+            <div class="dock-card-header">
+              <div class="dock-card-icon icon-amber">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z"/></svg>
+              </div>
+              <div>
+                <h2 id="legend-title" class="dock-card-title">Emissions Rating</h2>
+                <span class="dock-card-tag">CO₂e</span>
+              </div>
+            </div>
+            <ul class="legend-list" role="list">
+              <li class="legend-item">
+                <span class="legend-dot dot-low" aria-hidden="true"></span>
+                <div class="legend-text">
+                  <strong>Low Carbon</strong>
+                  <span>&lt; 50 kg CO₂e / passenger</span>
+                </div>
+              </li>
+              <li class="legend-item">
+                <span class="legend-dot dot-mid" aria-hidden="true"></span>
+                <div class="legend-text">
+                  <strong>Moderate Carbon</strong>
+                  <span>50 – 150 kg CO₂e / passenger</span>
+                </div>
+              </li>
+              <li class="legend-item">
+                <span class="legend-dot dot-high" aria-hidden="true"></span>
+                <div class="legend-text">
+                  <strong>High Carbon</strong>
+                  <span>&gt; 150 kg CO₂e / passenger</span>
+                </div>
+              </li>
+            </ul>
+          </section>
+
+          <!-- Advisor Handover Card -->
+          <section class="dock-card handover-card hidden" id="handover-status-card" aria-labelledby="handover-title" aria-live="polite">
+            <div class="dock-card-header">
+              <div class="dock-card-icon icon-purple">
+                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/></svg>
+              </div>
+              <div>
+                <h2 id="handover-title" class="dock-card-title">Human Advisor</h2>
+                <span class="dock-card-tag tag-live">Active</span>
+              </div>
+            </div>
+            <p id="handover-status-text" class="dock-card-body">Human advisor requested. Your conversation dossier and trip preferences have been attached.</p>
+          </section>
+
+        </aside>
+
+        <!-- ─── RIGHT: CHAT HUB ────────────────────────────── -->
+        <section class="chat-hub" aria-labelledby="chat-panel-title">
+
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <div class="chat-header-left">
+              <div class="chat-avatar">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
+                  <circle cx="12" cy="12" r="10" fill="url(#av-bg)"/>
+                  <path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14" stroke="#0D9488" stroke-width="1.8" stroke-linecap="round"/>
+                  <circle cx="9" cy="10" r="1.2" fill="#0F766E"/>
+                  <circle cx="15" cy="10" r="1.2" fill="#0F766E"/>
+                  <path d="M12 4V6" stroke="#14B8A6" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M6 8L7.5 9" stroke="#14B8A6" stroke-width="1.2" stroke-linecap="round"/>
+                  <path d="M18 8L16.5 9" stroke="#14B8A6" stroke-width="1.2" stroke-linecap="round"/>
+                  <defs>
+                    <radialGradient id="av-bg" cx="12" cy="12" r="10" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#CCFBF1"/>
+                      <stop offset="1" stop-color="#99F6E4"/>
+                    </radialGradient>
+                  </defs>
+                </svg>
+                <span class="avatar-pulse"></span>
+              </div>
+              <div>
+                <h2 id="chat-panel-title" class="chat-title">EcoTravel Consultant AI</h2>
+                <span class="chat-subtitle">Personalized Sustainable Journey Planning & Intelligence</span>
+              </div>
+            </div>
+            <div class="chat-header-right">
+              <span class="online-badge">
+                <span class="online-dot"></span>
+                Consultant Ready
+              </span>
+            </div>
+          </div>
+
+          <!-- Chat Messages Container -->
+          <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-atomic="false" aria-label="Chat conversation">
+            <!-- Populated dynamically by JS -->
+          </div>
+
+          <!-- Quick Reply Chips Row -->
+          <div class="quick-replies" id="quick-replies" role="group" aria-label="Quick reply options">
+            <!-- Populated dynamically by JS -->
+          </div>
+
+          <!-- Chat Input Controls -->
+          <div class="chat-input-wrapper">
+            <div class="chat-input-row">
+              <label for="user-input" class="sr-only">Type your message</label>
+              <input
+                type="text"
+                id="user-input"
+                class="chat-input"
+                placeholder="Ask anything: 'Plan a 5-day nature trip to Paris', 'Vegan restaurants in Berlin', 'Zero-waste packing list'…"
+                autocomplete="off"
+                aria-label="Chat message input"
+                aria-describedby="input-help"
+                maxlength="500"
+              />
+              <button class="send-btn" id="send-btn" aria-label="Send message">
+                <svg class="send-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
+                </svg>
+              </button>
+            </div>
+            <div class="input-footer">
+              <div class="prompt-suggestions">
+                <button class="prompt-chip" data-prompt="Plan a 5-day sustainable trip to Paris">🗓️ 5-Day Paris Plan</button>
+                <button class="prompt-chip" data-prompt="Where can I find farm-to-table vegan restaurants?">🥗 Green Dining</button>
+                <button class="prompt-chip" data-prompt="Give me a zero-waste packing checklist">🎒 Packing Checklist</button>
+                <button class="prompt-chip" data-prompt="Compare rail vs flight emissions">🚆 Rail vs Flight</button>
+                <button class="prompt-chip" data-prompt="Give me top eco travel tips">💡 Eco Tips</button>
+              </div>
+            </div>
+          </div>
+          <p id="input-help" class="sr-only">Press Enter or click Send to send your message.</p>
+
+        </section>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="site-footer" role="contentinfo">
+        <div class="footer-inner">
+          <div class="footer-brand">
+            <strong>EcoTravel Advisor</strong> · Sustainable Tourism & Carbon Intelligence Platform
+          </div>
+          <div class="footer-links">
+            <a href="https://rasa.com" target="_blank" rel="noopener noreferrer">Rasa Open Source</a>
+            <span class="footer-dot">·</span>
+            <a href="https://climatiq.io" target="_blank" rel="noopener noreferrer">Climatiq Emissions API</a>
+            <span class="footer-dot">·</span>
+            <span>Amadeus Global API</span>
+          </div>
+        </div>
+      </footer>
+
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

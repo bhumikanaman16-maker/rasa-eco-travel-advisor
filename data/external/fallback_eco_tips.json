@@ -1,0 +1,34 @@
+{
+  "categories": {
+    "transport": [
+      "🚆 Choose rail or electric coaches over domestic/short-haul flights — cuts journey emissions by up to 80-90%.",
+      "🚲 Use bike-share systems, e-scooters, and walk whenever possible in urban centers.",
+      "🚌 Purchase multi-day regional public transit passes for seamless train, tram, and ferry access.",
+      "🚗 If driving is essential, opt for electric vehicle (EV) rentals or carpool rideshares."
+    ],
+    "accommodation": [
+      "🏨 Seek out eco-certified lodgings (Green Key, EarthCheck, LEED, EU Ecolabel, Bio-Hotels).",
+      "💡 Hang towels to reuse multiple days; decline daily housekeeping to save water and detergents.",
+      "❄️ Adjust thermostats moderately (turn off AC/heating when exploring the city).",
+      "🚿 Keep showers short (under 5 minutes) to conserve local freshwater resources."
+    ],
+    "dining": [
+      "🥗 Prioritise plant-forward, vegetarian, and farm-to-fork dining — cuts dietary carbon by ~50%.",
+      "🍎 Shop at neighbourhood farmers' markets and family-owned bakeries/grocers to support the local economy.",
+      "🍷 Choose certified organic, biodynamic, and locally produced wines, beers, and ciders.",
+      "🍽️ Avoid all single-use cutlery and ask for tap water in refillable carafes where potable."
+    ],
+    "wildlife_nature": [
+      "🐾 Never participate in exploitative wildlife encounters (no riding elephants, petting drugged tigers, or holding captive sea turtles).",
+      "🌿 Adhere strictly to the 7 Principles of 'Leave No Trace' — stay on marked trails and pack out all rubbish.",
+      "🪸 Wear non-nano zinc reef-safe sunscreen when swimming in oceans, cenotes, and lakes to protect coral ecosystems.",
+      "🔇 Maintain quiet in natural reserves to avoid distressing birds and native fauna."
+    ],
+    "cultural_community": [
+      "🛍️ Buy souvenirs directly from local indigenous artisans and craftspeople rather than mass-produced imports.",
+      "👗 Respect local dress codes and cultural norms when visiting sacred monuments, temples, and villages.",
+      "💬 Learn basic greeting phrases in the local language (e.g. hello, please, thank you, delicious).",
+      "🤝 Choose community-based tour guides whose fees stay directly inside the visited neighbourhood."
+    ]
+  }
+}

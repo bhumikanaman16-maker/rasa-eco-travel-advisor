@@ -21,6 +21,36 @@ stories:
       - active_loop: null
       - action: action_submit_trip_plan
 
+  - story: plan trip then request custom itinerary
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - intent: ask_itinerary
+      - action: action_generate_itinerary
+
+  - story: plan trip then request green dining
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - intent: ask_dining
+      - action: action_recommend_dining
+
+  - story: plan trip then request packing tips
+    steps:
+      - intent: plan_trip
+      - action: trip_planning_form
+      - active_loop: trip_planning_form
+      - active_loop: null
+      - action: action_submit_trip_plan
+      - intent: ask_packing_tips
+      - action: action_recommend_packing
+
   - story: ask for sustainable transport
     steps:
       - intent: ask_transport
@@ -40,6 +70,21 @@ stories:
     steps:
       - intent: ask_flights
       - action: action_search_flights
+
+  - story: ask for eco tips directly
+    steps:
+      - intent: ask_eco_tips
+      - action: action_provide_eco_tips
+
+  - story: ask for budget breakdown directly
+    steps:
+      - intent: ask_budget_breakdown
+      - action: action_budget_breakdown
+
+  - story: ask for weather advice directly
+    steps:
+      - intent: ask_weather
+      - action: action_weather_advice
 
   - story: start carbon calculation
     steps:
@@ -77,36 +122,3 @@ stories:
     steps:
       - intent: out_of_scope
       - action: utter_out_of_scope
-
-  - story: plan trip then ask transport
-    steps:
-      - intent: plan_trip
-      - action: trip_planning_form
-      - active_loop: trip_planning_form
-      - active_loop: null
-      - action: action_submit_trip_plan
-      - intent: ask_transport
-      - action: action_recommend_transport
-
-  - story: plan trip then ask accommodation
-    steps:
-      - intent: plan_trip
-      - action: trip_planning_form
-      - active_loop: trip_planning_form
-      - active_loop: null
-      - action: action_submit_trip_plan
-      - intent: ask_accommodation
-      - action: action_recommend_accommodation
-
-  - story: plan trip then calculate carbon
-    steps:
-      - intent: plan_trip
-      - action: trip_planning_form
-      - active_loop: trip_planning_form
-      - active_loop: null
-      - action: action_submit_trip_plan
-      - intent: ask_carbon
-      - action: carbon_calculation_form
-      - active_loop: carbon_calculation_form
-      - active_loop: null
-      - action: action_calculate_carbon

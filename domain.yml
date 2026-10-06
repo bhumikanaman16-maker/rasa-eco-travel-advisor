@@ -8,11 +8,21 @@ intents:
   - nlu_fallback
   - plan_trip
   - provide_destination
+  - provide_duration
   - provide_dates
+  - provide_party
+  - provide_style
+  - provide_pace
   - provide_budget
   - provide_sustainability
   - provide_origin
   - provide_transport_mode
+  - ask_itinerary
+  - ask_dining
+  - ask_packing_tips
+  - ask_eco_tips
+  - ask_budget_breakdown
+  - ask_weather
   - ask_transport
   - ask_accommodation
   - ask_activities
@@ -26,9 +36,14 @@ intents:
 
 entities:
   - destination
+  - trip_duration
   - travel_dates
+  - travel_party
+  - trip_style
+  - travel_pace
   - budget
   - sustainability_level
+  - dietary_preference
   - origin
   - transport_mode
 
@@ -38,33 +53,76 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      # During trip planning: accept entity extraction
       - type: from_entity
         entity: destination
+      - type: from_text
         conditions:
           - active_loop: trip_planning_form
             requested_slot: destination
-
-      # During carbon form: accept free text typed by user
-      - type: from_text
-        conditions:
           - active_loop: carbon_calculation_form
             requested_slot: destination
+
+  trip_duration:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: trip_duration
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: trip_duration
 
   travel_dates:
     type: text
     influence_conversation: true
     mappings:
+      - type: from_entity
+        entity: travel_dates
       - type: from_text
         conditions:
           - active_loop: trip_planning_form
             requested_slot: travel_dates
 
+  travel_party:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: travel_party
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: travel_party
+
+  trip_style:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: trip_style
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: trip_style
+
+  travel_pace:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: travel_pace
+      - type: from_text
+        conditions:
+          - active_loop: trip_planning_form
+            requested_slot: travel_pace
+
   budget:
     type: text
     influence_conversation: true
     mappings:
-      # Accept text directly so "800 euros" works reliably
+      - type: from_entity
+        entity: budget
       - type: from_text
         conditions:
           - active_loop: trip_planning_form
@@ -74,7 +132,8 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      # Accept text directly so "high" / "medium" / "low" works reliably
+      - type: from_entity
+        entity: sustainability_level
       - type: from_text
         conditions:
           - active_loop: trip_planning_form
@@ -84,7 +143,8 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      # Accept free text typed by user during carbon form
+      - type: from_entity
+        entity: origin
       - type: from_text
         conditions:
           - active_loop: carbon_calculation_form
@@ -94,7 +154,8 @@ slots:
     type: text
     influence_conversation: true
     mappings:
-      # Accept free text typed by user during carbon form
+      - type: from_entity
+        entity: transport_mode
       - type: from_text
         conditions:
           - active_loop: carbon_calculation_form
@@ -111,7 +172,11 @@ forms:
   trip_planning_form:
     required_slots:
       - destination
+      - trip_duration
       - travel_dates
+      - travel_party
+      - trip_style
+      - travel_pace
       - budget
       - sustainability_level
 
@@ -124,43 +189,190 @@ forms:
 responses:
 
   utter_greet:
-    - text: "Hello! 🌱 I am EcoTravel Advisor, your sustainable journey companion. I can help you plan eco-friendly trips, estimate carbon emissions, find green accommodation, and compare sustainable transport options. Would you like to start planning a trip?"
+    - text: "Hello! 🌱 I am EcoTravel Advisor, your professional sustainable journey planner and eco-travel consultant.\n\nI can help you create custom day-by-day itineraries, discover farm-to-table green dining, calculate carbon footprints, find certified eco-hotels, compare low-carbon transport, and guide zero-waste packing.\n\nWould you like to start planning your personalized sustainable trip?"
+      buttons:
+        - title: "🌍 Plan a Trip"
+          payload: "/plan_trip"
+        - title: "🗓️ Custom Itinerary"
+          payload: "/ask_itinerary"
+        - title: "🥗 Green Dining Guide"
+          payload: "/ask_dining"
+        - title: "🎒 Zero-Waste Packing"
+          payload: "/ask_packing_tips"
+        - title: "🚆 Transport Compare"
+          payload: "/ask_transport"
+        - title: "🏨 Eco Accommodation"
+          payload: "/ask_accommodation"
+        - title: "🌍 Carbon Footprint"
+          payload: "/ask_carbon"
+        - title: "💡 Eco Travel Tips"
+          payload: "/ask_eco_tips"
 
   utter_goodbye:
-    - text: "Goodbye! Thank you for using EcoTravel Advisor. Travel sustainably and make a positive difference. 🌍♻️"
+    - text: "Goodbye! Thank you for consulting EcoTravel Advisor. Wishing you wonderful, low-impact, sustainable travels that preserve our planet! 🌍♻️✨"
 
   utter_thank_you:
-    - text: "You're welcome! I'm delighted to help you travel more sustainably. Let me know if there is anything else I can assist with."
+    - text: "You're very welcome! I'm delighted to help you travel more sustainably. Let me know if you'd like more recommendations on dining, day-by-day itineraries, packing, transport, or carbon offsets."
+      buttons:
+        - title: "🗓️ Day-by-Day Itinerary"
+          payload: "/ask_itinerary"
+        - title: "🥗 Green Dining"
+          payload: "/ask_dining"
+        - title: "🎒 Eco Packing Checklist"
+          payload: "/ask_packing_tips"
+        - title: "🌍 Carbon Footprint"
+          payload: "/ask_carbon"
 
   utter_iamabot:
-    - text: "I am EcoTravel Advisor — an AI-powered sustainable travel assistant built with Rasa Open Source. I provide sustainable travel guidance including carbon footprint calculations, eco-accommodation recommendations, and green transport options. I can escalate complex requests to a human travel advisor."
+    - text: "I am EcoTravel Advisor — a professional AI sustainable travel consultant powered by Rasa Open Source. I combine real-time carbon data (Climatiq API), flight availability (Amadeus API), certified eco-lodging scoring, zero-waste lifestyle planning, and bespoke itinerary generation to create ethical, low-impact travel experiences. I can also escalate your context to a human travel advisor anytime."
 
   utter_ask_destination:
-    - text: "Where would you like to travel? Please enter the destination city or country."
+    - text: "Where in the world are you dreaming of exploring? 🌍\n\nPlease enter your destination city, region, or country (e.g. Paris, Berlin, London, Amsterdam, Barcelona, Rome, Tokyo, Costa Rica...)."
+      buttons:
+        - title: "🗼 Paris"
+          payload: "Paris"
+        - title: "🇬🇧 London"
+          payload: "London"
+        - title: "🇩🇪 Berlin"
+          payload: "Berlin"
+        - title: "🇳🇱 Amsterdam"
+          payload: "Amsterdam"
+        - title: "🇪🇸 Barcelona"
+          payload: "Barcelona"
+        - title: "🇮🇹 Rome"
+          payload: "Rome"
+
+  utter_ask_trip_duration:
+    - text: "How many days will your journey be? 🗓️\n\nEnter the length of your stay (e.g. 3 days, 5 days, 1 week, 10 days, weekend getaway)."
+      buttons:
+        - title: "⚡ 3 Days (Weekend)"
+          payload: "3 days"
+        - title: "🌿 5 Days (Classic)"
+          payload: "5 days"
+        - title: "🗺️ 7 Days (1 Week)"
+          payload: "7 days"
+        - title: "🏔️ 10 Days (Extended)"
+          payload: "10 days"
+        - title: "✨ 2 Weeks (Slow Travel)"
+          payload: "14 days"
 
   utter_ask_travel_dates:
-    - text: "What dates are you planning to travel? Please enter the date range, for example: 10 October to 15 October."
+    - text: "What dates or season are you planning to travel? 📅\n\nEnter your date range or approximate timing (e.g. 10 October to 15 October, Next month, Summer, Spring)."
+      buttons:
+        - title: "🗓️ Next Weekend"
+          payload: "next weekend"
+        - title: "🍁 October 10 - 15"
+          payload: "10 October to 15 October"
+        - title: "🌸 Spring Season"
+          payload: "Spring"
+        - title: "☀️ Summer Season"
+          payload: "Summer"
+        - title: "🍂 Next Month"
+          payload: "next month"
+
+  utter_ask_travel_party:
+    - text: "Who will be traveling on this journey? 👥\n\nThis allows me to tailor activities, accommodations, and pacing for your party."
+      buttons:
+        - title: "👤 Solo Explorer"
+          payload: "Solo traveler"
+        - title: "💑 Couple / Romantic"
+          payload: "Couple"
+        - title: "👨‍👩‍👧 Family with Children"
+          payload: "Family with kids"
+        - title: "👥 Group of Friends"
+          payload: "Group of friends"
+
+  utter_ask_trip_style:
+    - text: "What kind of experiences and travel style are you craving most? ✨\n\nTell me what excites you, or select a style below:"
+      buttons:
+        - title: "🌿 Nature & Wildlife"
+          payload: "Nature & Wildlife"
+        - title: "🏛️ Culture, History & Arts"
+          payload: "Culture & History"
+        - title: "🥗 Foodie & Organic Cuisine"
+          payload: "Foodie & Culinary"
+        - title: "🚵 Outdoor Adventure & Hiking"
+          payload: "Outdoor Adventure"
+        - title: "🧘 Eco-Wellness & Slow Living"
+          payload: "Eco-Wellness & Relaxation"
+
+  utter_ask_travel_pace:
+    - text: "What daily pace suits you best? ⏱️\n\nHow do you prefer your schedule to feel each day?"
+      buttons:
+        - title: "🍃 Relaxed & Slow (1-2 key sights, lots of downtime)"
+          payload: "Relaxed"
+        - title: "⚖️ Balanced (Moderate pace with leisure time)"
+          payload: "Balanced"
+        - title: "⚡ Action-Packed (See as much as possible)"
+          payload: "Action-packed"
 
   utter_ask_budget:
-    - text: "What is your approximate travel budget? Please enter an amount, for example: 800 euros or £600."
+    - text: "What is your approximate overall budget for this journey? 💰\n\nPlease enter an amount (e.g. €800, £1000, $1500) or select a comfort tier:"
+      buttons:
+        - title: "🎒 Budget / Backpacker (< €500)"
+          payload: "500 euros"
+        - title: "🌿 Mid-Range Comfort (~ €1000)"
+          payload: "1000 euros"
+        - title: "✨ Premium Eco (~ €2000)"
+          payload: "2000 euros"
+        - title: "💎 Luxury Eco-Lodge (€3000+)"
+          payload: "3000 euros"
 
   utter_ask_sustainability_level:
-    - text: "How important is sustainability to you for this trip? Please enter low, medium, or high."
+    - text: "How high is sustainability on your priority list for this trip? 🌱\n\nChoose your commitment level:"
+      buttons:
+        - title: "🟢 High (Maximum Green / Zero-Waste priority)"
+          payload: "high"
+        - title: "🟡 Medium (Balanced Eco & Cost)"
+          payload: "medium"
+        - title: "⚪ Low (Standard / Budget focus)"
+          payload: "low"
 
   utter_ask_origin:
-    - text: "Where will your journey start from? Please enter the city or location."
+    - text: "Where will your journey start from? 📍 Please enter your departure city or location (e.g. London, Berlin, Paris, Jaipur, New York)."
+      buttons:
+        - title: "🇬🇧 London"
+          payload: "London"
+        - title: "🇫🇷 Paris"
+          payload: "Paris"
+        - title: "🇩🇪 Berlin"
+          payload: "Berlin"
+        - title: "🇮🇳 Delhi"
+          payload: "Delhi"
 
   utter_ask_transport_mode:
-    - text: "Which transport mode would you like me to calculate emissions for? Please enter rail, car, or air."
+    - text: "Which transport mode would you like me to calculate emissions for? 🚆🚗✈️"
+      buttons:
+        - title: "🚆 Rail (Electric / High-Speed Train)"
+          payload: "rail"
+        - title: "🚗 Car (Road Travel)"
+          payload: "car"
+        - title: "✈️ Air (Flight)"
+          payload: "air"
 
   utter_out_of_scope:
-    - text: "I am specifically designed for sustainable travel planning. I can help with destinations, transport comparisons, carbon footprint calculations, eco-accommodation, and sustainable activities. Is there something travel-related I can assist you with?"
+    - text: "I am specifically designed as a professional sustainable travel advisor. I can help with destinations, customized day-by-day itineraries, green dining, zero-waste packing, transport comparisons, carbon footprint calculations, eco-accommodation, and sustainable activities.\n\nHow can I assist your travel journey today?"
+      buttons:
+        - title: "🌍 Plan a Trip"
+          payload: "/plan_trip"
+        - title: "🗓️ Custom Itinerary"
+          payload: "/ask_itinerary"
+        - title: "🥗 Green Dining"
+          payload: "/ask_dining"
+        - title: "🌍 Carbon Footprint"
+          payload: "/ask_carbon"
 
   utter_default:
-    - text: "I'm sorry, I didn't fully understand that. Could you rephrase your request, or choose an option from the menu?"
+    - text: "I'm sorry, I didn't fully understand that. As an AI eco-travel consultant, I can help you plan a trip, generate an itinerary, recommend green dining, check packing tips, or calculate emissions. What would you like to explore?"
 
 actions:
   - action_submit_trip_plan
+  - action_generate_itinerary
+  - action_recommend_dining
+  - action_recommend_packing
+  - action_provide_eco_tips
+  - action_budget_breakdown
+  - action_weather_advice
   - action_recommend_transport
   - action_recommend_accommodation
   - action_recommend_activities

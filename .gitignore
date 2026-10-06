@@ -16,7 +16,7 @@ htmlcov/
 
 # ─── OBSOLETE MODELS (Only track the final verified model) ─────
 models/*.tar.gz
-!models/20261002-230550-drab-union.tar.gz
+!models/20261006-163800-sophisticated-canteen.tar.gz
 
 # ─── RASA CACHE & LOGS ─────────────────────────────────────────
 .rasa/

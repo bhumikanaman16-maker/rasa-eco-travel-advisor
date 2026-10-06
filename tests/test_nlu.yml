@@ -1,10 +1,5 @@
 version: "3.1"
 
-nlu_evaluation_results:
-
-# This file contains NLU evaluation examples for rasa test nlu.
-# Each entry tests that a sample utterance is classified with the correct intent.
-
 nlu:
   - intent: greet
     examples: |
@@ -12,6 +7,7 @@ nlu:
       - hi there
       - good morning
       - hey eco advisor
+      - greetings assistant
 
   - intent: goodbye
     examples: |
@@ -19,6 +15,23 @@ nlu:
       - goodbye
       - see you later
       - that's all thanks
+      - have a nice day
+
+  - intent: affirm
+    examples: |
+      - yes
+      - yes please
+      - absolutely
+      - that works
+      - sounds good
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - not really
+      - no thanks
+      - I would rather not
 
   - intent: plan_trip
     examples: |
@@ -26,13 +39,132 @@ nlu:
       - help me plan a sustainable holiday
       - I want an eco friendly trip
       - plan a low carbon holiday for me
+      - design my vacation
 
-  - intent: ask_carbon
+  - intent: provide_destination
     examples: |
-      - calculate my carbon footprint
-      - how much carbon will this trip produce
-      - what are the emissions for this journey
-      - estimate my travel emissions
+      - I want to visit [Paris](destination)
+      - my destination is [Berlin](destination)
+      - [Amsterdam](destination)
+      - take me to [Rome](destination)
+      - [Barcelona](destination)
+
+  - intent: provide_duration
+    examples: |
+      - [3 days](trip_duration)
+      - [5 days](trip_duration)
+      - [1 week](trip_duration)
+      - [10 days](trip_duration)
+      - [weekend getaway](trip_duration)
+
+  - intent: provide_dates
+    examples: |
+      - [10 October to 15 October](travel_dates)
+      - [5 November to 9 November](travel_dates)
+      - [next weekend](travel_dates)
+      - during [Summer](travel_dates)
+      - [next month](travel_dates)
+
+  - intent: provide_party
+    examples: |
+      - [Solo explorer](travel_party)
+      - [Couple](travel_party)
+      - [Family with kids](travel_party)
+      - [Group of friends](travel_party)
+      - traveling alone
+
+  - intent: provide_style
+    examples: |
+      - [Nature & Wildlife](trip_style)
+      - [Culture & History](trip_style)
+      - [Foodie & Culinary](trip_style)
+      - [Outdoor Adventure](trip_style)
+      - [Eco-Wellness & Relaxation](trip_style)
+
+  - intent: provide_pace
+    examples: |
+      - [Relaxed](travel_pace)
+      - [Balanced](travel_pace)
+      - [Action-packed](travel_pace)
+      - slow and leisurely pace
+
+  - intent: provide_budget
+    examples: |
+      - [800 euros](budget)
+      - [1000 euros](budget)
+      - [£1200](budget)
+      - [Budget / Backpacker](budget)
+      - [Luxury Eco-Lodge](budget)
+
+  - intent: provide_sustainability
+    examples: |
+      - [high](sustainability_level)
+      - [medium](sustainability_level)
+      - [low](sustainability_level)
+      - maximum eco friendly
+      - balanced sustainability
+
+  - intent: provide_origin
+    examples: |
+      - I am travelling from [London](origin)
+      - my journey starts in [Berlin](origin)
+      - starting from [Paris](origin)
+      - [Delhi](origin)
+      - [Jaipur](origin)
+
+  - intent: provide_transport_mode
+    examples: |
+      - [rail](transport_mode)
+      - [train](transport_mode)
+      - [car](transport_mode)
+      - [air](transport_mode)
+      - [plane](transport_mode)
+
+  - intent: ask_itinerary
+    examples: |
+      - create a day by day itinerary
+      - give me a 3-day itinerary for [Paris](destination)
+      - show me the daily schedule
+      - what is the itinerary for my trip
+      - design a 5 day travel schedule
+
+  - intent: ask_dining
+    examples: |
+      - recommend green dining options
+      - where can I find vegan and organic restaurants
+      - show farm to table restaurants in [Paris](destination)
+      - sustainable food options in [Berlin](destination)
+      - zero waste dining spots
+
+  - intent: ask_packing_tips
+    examples: |
+      - what should I pack for my trip
+      - give me an eco friendly packing checklist
+      - zero waste packing tips
+      - what essentials should I bring
+      - sustainable packing list
+
+  - intent: ask_eco_tips
+    examples: |
+      - give me sustainable travel tips
+      - how can I reduce my environmental impact while travelling
+      - tips for zero waste travel
+      - best practices for eco tourism
+      - leave no trace travel advice
+
+  - intent: ask_budget_breakdown
+    examples: |
+      - how should I divide my budget
+      - budget breakdown for sustainable travel
+      - how to allocate [1000 euros](budget)
+      - sustainable budget advice
+
+  - intent: ask_weather
+    examples: |
+      - what is the best time of year to visit
+      - when is the eco season to travel
+      - weather forecast and best seasons
+      - climate advice for [Amsterdam](destination)
 
   - intent: ask_transport
     examples: |
@@ -54,6 +186,27 @@ nlu:
       - what eco friendly activities can I do
       - suggest local eco tours
       - show me local cultural experiences
+
+  - intent: ask_flights
+    examples: |
+      - search for flights
+      - find me eco friendly flight options
+      - check available flights
+      - show flights for my trip
+
+  - intent: ask_carbon
+    examples: |
+      - calculate my carbon footprint
+      - how much carbon will this trip produce
+      - what are the emissions for this journey
+      - estimate my travel emissions
+
+  - intent: ask_carbon_offset
+    examples: |
+      - recommend carbon offset programmes
+      - how can I offset my remaining travel emissions
+      - show me verified carbon offset options
+      - tell me about carbon credit options
 
   - intent: ask_handover
     examples: |
@@ -82,33 +235,3 @@ nlu:
       - who won the football match
       - order food for me
       - what is the meaning of life
-
-  - intent: affirm
-    examples: |
-      - yes
-      - yes please
-      - absolutely
-      - that works
-
-  - intent: deny
-    examples: |
-      - no
-      - nope
-      - not really
-      - no thanks
-
-  - intent: provide_origin
-    examples: |
-      - I am travelling from [London](origin)
-      - my journey starts in [Berlin](origin)
-      - starting from [Paris](origin)
-      - [Manchester](origin)
-
-  - intent: provide_transport_mode
-    examples: |
-      - [rail](transport_mode)
-      - [train](transport_mode)
-      - I want to travel by [train](transport_mode)
-      - [air](transport_mode)
-      - [car](transport_mode)
-      - I will be [flying](transport_mode)

@@ -6,12 +6,12 @@
     "measured_iterations": 10,
     "target_latency_seconds": 3.0,
     "request_timeout_seconds": 30,
-    "timestamp": "2026-10-05T14:16:47+0530"
+    "timestamp": "2026-10-06T18:03:10.707996"
   },
   "local_interactions": [
     {
       "scenario": "A. Greeting",
-      "description": "Simple greeting – Rasa NLU + response template",
+      "description": "Greeting response template",
       "category": "local",
       "message": "hello",
       "warmup_requests": 2,
@@ -19,11 +19,11 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0236,
-        "mean": 0.0372,
-        "median": 0.0356,
-        "max": 0.0466,
-        "p95": 0.0466,
+        "min": 0.0492,
+        "mean": 0.0552,
+        "median": 0.0538,
+        "max": 0.0701,
+        "p95": 0.0701,
         "count": 10
       },
       "compliance_assessment": "PASS",
@@ -31,7 +31,7 @@
     },
     {
       "scenario": "B. Start trip planning",
-      "description": "Intent trigger for trip planning form activation",
+      "description": "Trigger trip consultation form",
       "category": "local",
       "message": "/plan_trip",
       "warmup_requests": 2,
@@ -39,19 +39,79 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0212,
-        "mean": 0.0353,
-        "median": 0.0386,
-        "max": 0.0468,
-        "p95": 0.0468,
+        "min": 0.0376,
+        "mean": 0.046,
+        "median": 0.044,
+        "max": 0.0729,
+        "p95": 0.0729,
         "count": 10
       },
       "compliance_assessment": "PASS",
       "target_seconds": 3.0
     },
     {
-      "scenario": "C. Sustainable activities request",
-      "description": "Triggers action_recommend_activities (local JSON data, no external API)",
+      "scenario": "C. Bespoke Itinerary Generation",
+      "description": "Triggers action_generate_itinerary (day-by-day plan engine)",
+      "category": "local",
+      "message": "/ask_itinerary",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0801,
+        "mean": 0.1051,
+        "median": 0.1055,
+        "max": 0.1402,
+        "p95": 0.1402,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "D. Green & Farm-to-Table Dining",
+      "description": "Triggers action_recommend_dining",
+      "category": "local",
+      "message": "/ask_dining",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0768,
+        "mean": 0.0964,
+        "median": 0.0883,
+        "max": 0.1333,
+        "p95": 0.1333,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "E. Zero-Waste Packing Checklist",
+      "description": "Triggers action_recommend_packing",
+      "category": "local",
+      "message": "/ask_packing_tips",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0794,
+        "mean": 0.0949,
+        "median": 0.0892,
+        "max": 0.12,
+        "p95": 0.12,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "F. Sustainable Activities",
+      "description": "Triggers action_recommend_activities",
       "category": "local",
       "message": "recommend sustainable activities",
       "warmup_requests": 2,
@@ -59,19 +119,79 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0447,
-        "mean": 0.0573,
-        "median": 0.0614,
-        "max": 0.0652,
-        "p95": 0.0652,
+        "min": 0.0841,
+        "mean": 0.096,
+        "median": 0.09,
+        "max": 0.1258,
+        "p95": 0.1258,
         "count": 10
       },
       "compliance_assessment": "PASS",
       "target_seconds": 3.0
     },
     {
-      "scenario": "D. Carbon offset programmes",
-      "description": "Triggers action_recommend_carbon_offsets (local JSON data, no external API)",
+      "scenario": "G. Sustainable Budget Allocation",
+      "description": "Triggers action_budget_breakdown",
+      "category": "local",
+      "message": "how should I divide my budget?",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0797,
+        "mean": 0.0926,
+        "median": 0.0848,
+        "max": 0.1204,
+        "p95": 0.1204,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "H. Climate & Eco-Season Advice",
+      "description": "Triggers action_weather_advice",
+      "category": "local",
+      "message": "what is the best time of year to visit?",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.1011,
+        "mean": 0.118,
+        "median": 0.113,
+        "max": 0.1474,
+        "p95": 0.1474,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "I. Sustainable Transport Comparison",
+      "description": "Triggers action_recommend_transport",
+      "category": "local",
+      "message": "recommend sustainable transport",
+      "warmup_requests": 2,
+      "measured_iterations": 10,
+      "successful_runs": 10,
+      "failed_runs": 0,
+      "statistics": {
+        "min": 0.0754,
+        "mean": 0.1022,
+        "median": 0.0984,
+        "max": 0.1432,
+        "p95": 0.1432,
+        "count": 10
+      },
+      "compliance_assessment": "PASS",
+      "target_seconds": 3.0
+    },
+    {
+      "scenario": "J. Verified Carbon Offsets",
+      "description": "Triggers action_recommend_carbon_offsets",
       "category": "local",
       "message": "recommend carbon offset programmes",
       "warmup_requests": 2,
@@ -79,19 +199,19 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0453,
-        "mean": 0.0605,
-        "median": 0.0621,
-        "max": 0.065,
-        "p95": 0.065,
+        "min": 0.0731,
+        "mean": 0.0908,
+        "median": 0.0903,
+        "max": 0.1119,
+        "p95": 0.1119,
         "count": 10
       },
       "compliance_assessment": "PASS",
       "target_seconds": 3.0
     },
     {
-      "scenario": "E. Bot challenge",
-      "description": "Simple utter_iamabot response – pure Rasa response",
+      "scenario": "K. Bot challenge",
+      "description": "Triggers utter_iamabot",
       "category": "local",
       "message": "are you a bot?",
       "warmup_requests": 2,
@@ -99,19 +219,19 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0226,
-        "mean": 0.0388,
-        "median": 0.0449,
-        "max": 0.0477,
-        "p95": 0.0477,
+        "min": 0.0417,
+        "mean": 0.0576,
+        "median": 0.0621,
+        "max": 0.0734,
+        "p95": 0.0734,
         "count": 10
       },
       "compliance_assessment": "PASS",
       "target_seconds": 3.0
     },
     {
-      "scenario": "F. Fallback (ambiguous input)",
-      "description": "Deliberately unsupported input to trigger fallback mechanism",
+      "scenario": "L. Fallback handling",
+      "description": "Triggers 2-stage fallback action_handle_fallback",
       "category": "local",
       "message": "xyzzy flurble nonsense 12345",
       "warmup_requests": 2,
@@ -119,11 +239,11 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0439,
-        "mean": 0.0605,
-        "median": 0.0625,
-        "max": 0.0648,
-        "p95": 0.0648,
+        "min": 0.0764,
+        "mean": 0.0957,
+        "median": 0.094,
+        "max": 0.1199,
+        "p95": 0.1199,
         "count": 10
       },
       "compliance_assessment": "PASS",
@@ -132,8 +252,8 @@
   ],
   "external_dependent_interactions": [
     {
-      "scenario": "G. Flight search (external-dependent)",
-      "description": "Triggers action_search_flights – attempts Amadeus API then falls back to local data",
+      "scenario": "M. Flight search (external-dependent)",
+      "description": "Triggers action_search_flights (Amadeus Sandbox / Fallback)",
       "category": "external-dependent",
       "message": "/ask_flights",
       "warmup_requests": 2,
@@ -141,19 +261,19 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0467,
-        "mean": 0.0618,
-        "median": 0.0625,
-        "max": 0.0687,
-        "p95": 0.0687,
+        "min": 0.0791,
+        "mean": 0.0975,
+        "median": 0.1007,
+        "max": 0.1153,
+        "p95": 0.1153,
         "count": 10
       },
       "compliance_assessment": "PASS",
       "target_seconds": 3.0
     },
     {
-      "scenario": "H. Eco accommodation (external-dependent)",
-      "description": "Triggers action_recommend_accommodation – attempts Amadeus API then falls back",
+      "scenario": "N. Eco accommodation (external-dependent)",
+      "description": "Triggers action_recommend_accommodation (Amadeus Sandbox / Fallback)",
       "category": "external-dependent",
       "message": "/ask_accommodation",
       "warmup_requests": 2,
@@ -161,11 +281,11 @@
       "successful_runs": 10,
       "failed_runs": 0,
       "statistics": {
-        "min": 0.0465,
-        "mean": 0.0606,
-        "median": 0.0616,
-        "max": 0.0653,
-        "p95": 0.0653,
+        "min": 0.0933,
+        "mean": 0.3354,
+        "median": 0.2181,
+        "max": 0.7317,
+        "p95": 0.7317,
         "count": 10
       },
       "compliance_assessment": "PASS",

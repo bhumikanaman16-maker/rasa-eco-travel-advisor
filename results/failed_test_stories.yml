@@ -1,1 +1,29 @@
-# None of the test stories failed - all good!
+version: "3.1"
+stories:
+- story: test carbon calculation form (C:\Users\admin\Downloads\Documents\SST10466\EcoTravelAdvisor\tests\test_stories.yml)
+  steps:
+  - intent: ask_carbon
+  - action: carbon_calculation_form
+  - active_loop: carbon_calculation_form
+  - intent: provide_origin
+    entities:
+    - origin: London
+  - slot_was_set:
+    - origin: London
+  - action: carbon_calculation_form
+  - intent: provide_destination
+    entities:
+    - destination: Paris
+  - slot_was_set:
+    - destination: Paris
+  - action: carbon_calculation_form
+  - intent: provide_transport_mode
+    entities:
+    - transport_mode: train
+  - slot_was_set:
+    - transport_mode: train
+  - action: carbon_calculation_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_calculate_carbon

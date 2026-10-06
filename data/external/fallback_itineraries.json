@@ -1,0 +1,178 @@
+{
+  "_generic": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Arrival & Historic Old Town Discovery",
+        "morning": "Arrival, check into eco-certified accommodation, and unpack. Grab a zero-waste morning coffee and map at a local plant-based cafe.",
+        "afternoon": "Join a community-led walking or cycling tour through the historic quarters, visiting heritage plazas and architectural landmarks.",
+        "evening": "Dine at a family-run farm-to-table bistro showcasing seasonal regional specialties. Take a slow evening stroll along the illuminated riverside or pedestrian promenade.",
+        "transit_tip": "🚆 Purchase an unlimited 3-to-5 day municipal transit pass or rent a city bicycle."
+      },
+      {
+        "day": 2,
+        "title": "Arts, Cultural Immersion & Artisan Markets",
+        "morning": "Explore local artisan and farmers' markets. Sample freshly baked sourdough, regional cheeses, and seasonal fruits directly from growers.",
+        "afternoon": "Visit world-class independent museums, community galleries, or traditional craft workshops supporting local heritage preservation.",
+        "evening": "Enjoy dinner at an organic vegetarian restaurant followed by an acoustic concert or open-air theatrical performance.",
+        "transit_tip": "🚶 Walk between neighbourhood sights; average ~12,000 steps replaces ~3.2 kg car CO2e."
+      },
+      {
+        "day": 3,
+        "title": "Urban Nature, Botanical Green Spaces & Parks",
+        "morning": "Cycle to the city's largest botanical gardens, urban food forest, or scenic waterfront park for a refreshing morning nature walk.",
+        "afternoon": "Pack a zero-waste picnic with market produce. Rent a solar-powered electric boat or kayak for a low-impact waterway exploration.",
+        "evening": "Sunset viewing from an elevated green panoramic viewpoint, followed by dinner at a zero-waste certified eatery.",
+        "transit_tip": "🚲 Use dedicated municipal bike lanes with bike-share or e-bike rental."
+      },
+      {
+        "day": 4,
+        "title": "Day Trip to Surrounding Nature Reserve or Eco-Village",
+        "morning": "Take an electric regional train to nearby nature reserves, coastal cliffs, or sustainable vineyard/orchard cooperative.",
+        "afternoon": "Guided biodiversity nature hike with a local park ranger or participate in a sustainable cooking/wine tasting masterclass.",
+        "evening": "Return via train and enjoy casual street-food dining at a vibrant covered market hall.",
+        "transit_tip": "🚆 Regional rail offers scenic landscapes with 85% lower carbon footprint than driving."
+      },
+      {
+        "day": 5,
+        "title": "Hidden Gems, Slow Living & Farewell Sunset",
+        "morning": "Wander through quiet residential neighbourhoods, vintage bookshops, and zero-waste refill boutiques.",
+        "afternoon": "Relax at an eco-wellness spa (thermal mineral baths or natural salt sauna) or attend a pottery workshop.",
+        "evening": "Celebratory farewell dinner at a Michelin Green Star or slow-food restaurant reflecting on your sustainable journey.",
+        "transit_tip": "🚊 Hop on electric tram lines for a smooth, scenic cross-town return to your stay."
+      }
+    ]
+  },
+  "paris": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Iconic Sights on Foot & Le Marais Green Walk",
+        "morning": "Arrive at Gare du Nord / Gare de Lyon via Eurostar/TGV. Check into eco-hotel in 11th arrondissement. Morning croissant at organic bakery.",
+        "afternoon": "Walking exploration of Le Marais, Place des Vosges, and the historic courtyards. Discover zero-waste concept stores on Rue Charlot.",
+        "evening": "Plant-forward gourmet dinner at Le Potager de Charlotte or natural wine bistro in Canal Saint-Martin.",
+        "transit_tip": "🚲 Rent a Vélib' bike or use Paris Metro lines (100% electrified)."
+      },
+      {
+        "day": 2,
+        "title": "Artistic Masterpieces & Floating Electric Seine Cruise",
+        "morning": "Musée de l'Orangerie or Musée d'Orsay to admire Monet's Water Lilies and impressionist masterpieces.",
+        "afternoon": "Stroll through the Jardin des Tuileries, crossing Pont des Arts to the Latin Quarter and Shakespeare & Co.",
+        "evening": "Electric solar-powered Seine river cruise at twilight, followed by dinner at Marché des Enfants Rouges.",
+        "transit_tip": "🚶 Stroll the Seine pedestrianised riverbanks (Rives de Seine)."
+      },
+      {
+        "day": 3,
+        "title": "Urban Agriculture, Belleville Views & Green Oasis",
+        "morning": "Explore Coulée Verte René-Dumont — a lush 4.7 km elevated parkway built on a historic railway line.",
+        "afternoon": "Visit the community gardens and vibrant street art of Belleville; panoramic view of Paris from Parc de Belleville.",
+        "evening": "Farm-to-fork dinner at Michelin Green Star Septime or Septime La Cave for organic biodynamic pairings.",
+        "transit_tip": "🚊 Take Metro line 11 and electric bus line 69 across central Paris."
+      },
+      {
+        "day": 4,
+        "title": "Palaces, Forests & Sustainable Day Trip to Fontainebleau",
+        "morning": "Catch the 40-minute Transilien R train to Fontainebleau-Avon. Rent a bicycle near the station.",
+        "afternoon": "Cycle and hike through the UNESCO Fontainebleau Biosphere Reserve ancient sandstone forest and chateau grounds.",
+        "evening": "Return to Paris for casual organic crepes and Breton cider in Montparnasse.",
+        "transit_tip": "🚆 Transilien train journey produces less than 0.8 kg CO2 per passenger."
+      },
+      {
+        "day": 5,
+        "title": "Montmartre's Secret Vineyards & Farewell Rooftop Sunset",
+        "morning": "Early morning walk up the quiet backstreets of Montmartre, visiting the historic Clos Montmartre organic vineyard.",
+        "afternoon": "Browse second-hand vintage boutiques along Rue des Martyrs and visit the sustainable fashion hub La Caserne.",
+        "evening": "Sunset from the terrace of Parc des Buttes-Chaumont followed by farewell dinner at Aujourd'hui Demain.",
+        "transit_tip": "🚶 Take the Montmartre funicular with standard Metro ticket or climb the scenic stairways."
+      }
+    ]
+  },
+  "london": {
+    "days": [
+      {
+        "day": 1,
+        "title": "River Thames Green Corridor & Borough Market",
+        "morning": "Arrival at St Pancras International via Eurostar. Check into eco-hotel in Southwark. Fair-trade coffee near the river.",
+        "afternoon": "Walk the car-free South Bank path from Westminster Bridge to London Bridge, stopping at the free Tate Modern gallery.",
+        "evening": "Dine around Borough Market sampling zero-waste hot dishes, British organic cheeses, and local sourdough.",
+        "transit_tip": "🚆 Tap in/out with contactless payment on TfL buses, Tube, and Thames Clippers."
+      },
+      {
+        "day": 2,
+        "title": "Regent's Canal Towpath Cycling & Camden Green Hub",
+        "morning": "Santander Cycles rental along the scenic Regent's Canal towpath from Paddington basin to King's Cross Coal Drops Yard.",
+        "afternoon": "Explore Camden Lock craft stalls, organic vegan bakeries, and panoramic views from top of Primrose Hill.",
+        "evening": "Dinner at Mildreds Soho or Rovi vegetable-forward dining in Fitzrovia.",
+        "transit_tip": "🚲 Follow Quietway cycle routes (CS6 and Regent's Canal)."
+      },
+      {
+        "day": 3,
+        "title": "Ancient Woodland, Hampstead Heath & Wild Swimming",
+        "morning": "Overground train to Hampstead Heath. Hike to Parliament Hill for sweeping city skyline panoramas.",
+        "afternoon": "Eco dip in Hampstead mixed bathing pond (natural rainwater lake) and visit Kenwood House heritage estate.",
+        "evening": "Traditional historic pub dinner with locally brewed cask ales at The Holly Bush (18th-century landmark).",
+        "transit_tip": "🚊 London Overground train network connects green suburban commons."
+      },
+      {
+        "day": 4,
+        "title": "Royal Botanic Gardens Kew — UNESCO Biodiversity Center",
+        "morning": "District line tube to Kew Gardens — world's most biodiverse living plant collection and Temperate House.",
+        "afternoon": "Walk the Treetop Walkway 18 meters above ground and explore the Millennium Seed Bank conservation initiative.",
+        "evening": "Return to West London; dinner at an organic gastro-pub in Richmond upon Thames.",
+        "transit_tip": "🚆 Direct 30-min tube or South Western Railway from Waterloo."
+      },
+      {
+        "day": 5,
+        "title": "Greenwich Maritime & Royal Observatory Parkland",
+        "morning": "Uber Boat by Thames Clippers (hybrid electric vessel) cruise down the river to Greenwich Pier.",
+        "afternoon": "Explore Greenwich Royal Park, Prime Meridian line (Longitude 0°), and zero-carbon craft stalls at Greenwich Market.",
+        "evening": "Sunset picnic on Observatory hill and farewell dinner in Bermondsey beer mile micro-eateries.",
+        "transit_tip": "⛵ Hybrid Thames Clipper river ferry offers scenic travel with reduced emissions."
+      }
+    ]
+  },
+  "berlin": {
+    "days": [
+      {
+        "day": 1,
+        "title": "Berlin Wall History & Spree River Bike Tour",
+        "morning": "Arrive at Berlin Hauptbahnhof (Europe's largest solar-powered hub). Check into eco-hotel in Friedrichshain. Coffee at Silo.",
+        "afternoon": "Cycle along the East Side Gallery and Oberbaumbrücke into Kreuzberg's vibrant canal paths.",
+        "evening": "Street food dinner at Markthalle Neun or zero-waste dining at world-famous Frea.",
+        "transit_tip": "🚲 Rent a Donkey Republic bike with unlimited day pass."
+      },
+      {
+        "day": 2,
+        "title": "Tempelhof Field & Community Urban Gardens",
+        "morning": "Explore Tempelhofer Feld — a massive 355-hectare decommissioned airport turned public park and wildlife corridor.",
+        "afternoon": "Visit Prinzessinnengärten nomadic community urban garden; join a guided workshop on urban biodiversity.",
+        "evening": "Enjoy artisan vegan pizza at Sfizy Veg or craft beer at BRLO Brwhouse (built from upcycled shipping containers).",
+        "transit_tip": "🚊 U-Bahn line U8 and U6 with BVG 24-hour AB ticket."
+      },
+      {
+        "day": 3,
+        "title": "UNESCO Museum Island & Tiergarten Green Lung",
+        "morning": "Explore Museum Island (Neues Museum and Pergamon panorama).",
+        "afternoon": "Walk or cycle through the expansive Tiergarten to the iconic glass dome of the Reichstag (powered by renewable bio-oil).",
+        "evening": "Multi-course seasonal plant tasting dinner at Kopps in Mitte.",
+        "transit_tip": "🚶 Berlin's wide pedestrian tree-lined boulevards are ideal for walking."
+      },
+      {
+        "day": 4,
+        "title": "Day Trip to Potsdam Palaces & Havelland Lakes",
+        "morning": "S-Bahn S7 to Potsdam (30 mins). Rent a bike at Potsdam Hauptbahnhof.",
+        "afternoon": "Cycle through Sanssouci Palace organic gardens, Dutch Quarter, and along the scenic Havel river lakes.",
+        "evening": "Return to Berlin for craft cider and organic snacks in Prenzlauer Berg.",
+        "transit_tip": "🚆 S-Bahn line S7 with ABC zone ticket."
+      },
+      {
+        "day": 5,
+        "title": "Zero-Waste Shopping & Farewell Lake Sunset",
+        "morning": "Visit Original Unverpackt (pioneering zero-waste package-free supermarket) and Mauerpark flea market.",
+        "afternoon": "Take S-Bahn to Schlachtensee or Müggelsee for a refreshing natural lake swim and forest walk.",
+        "evening": "Farewell rooftop dinner at Klunkerkranich eco-cultural community rooftop garden in Neukölln.",
+        "transit_tip": "🚊 Tram M10 and M1 connecting Friedrichshain and Prenzlauer Berg."
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "text": "I am travelling from London",
+    "entities": [
+      {
+        "start": 21,
+        "end": 27,
+        "value": "London",
+        "entity": "origin"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to visit Paris",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "Paris",
+        "entity": "destination"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to travel by train",
+    "entities": [
+      {
+        "text": "I want to travel by train",
+        "start": 20,
+        "end": 25,
+        "entity": "transport_mode",
+        "value": "train"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to visit Paris",
+    "entities": [
+      {
+        "start": 16,
+        "end": 21,
+        "value": "Paris",
+        "entity": "destination"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "stay for 5 days",
+    "entities": [
+      {
+        "start": 9,
+        "end": 15,
+        "value": "5 days",
+        "entity": "trip_duration"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I want to travel from 10 October to 15 October",
+    "entities": [
+      {
+        "start": 22,
+        "end": 46,
+        "value": "10 October to 15 October",
+        "entity": "travel_dates"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Couple",
+    "entities": [
+      {
+        "start": 0,
+        "end": 6,
+        "value": "Couple",
+        "entity": "travel_party"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "I like Nature & Wildlife",
+    "entities": [
+      {
+        "start": 7,
+        "end": 24,
+        "value": "Nature & Wildlife",
+        "entity": "trip_style"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Balanced",
+    "entities": [
+      {
+        "start": 0,
+        "end": 8,
+        "value": "Balanced",
+        "entity": "travel_pace"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "my budget is 1000 euros",
+    "entities": [
+      {
+        "start": 13,
+        "end": 23,
+        "value": "1000 euros",
+        "entity": "budget"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "high",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "high",
+        "entity": "sustainability_level"
+      }
+    ],
+    "predicted_entities": []
+  }
+]

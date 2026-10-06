@@ -1,63 +1,91 @@
 {
-  "transport_mode": {
-    "precision": 0.9444444444444444,
-    "recall": 1.0,
-    "f1-score": 0.9714285714285714,
-    "support": 17,
-    "confused_with": {}
-  },
-  "budget": {
+  "trip_style": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 19,
+    "support": 14,
     "confused_with": {}
   },
-  "origin": {
+  "trip_duration": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 15,
-    "confused_with": {}
-  },
-  "destination": {
-    "precision": 1.0,
-    "recall": 1.0,
-    "f1-score": 1.0,
-    "support": 16,
+    "support": 10,
     "confused_with": {}
   },
   "sustainability_level": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 6,
+    "support": 3,
+    "confused_with": {}
+  },
+  "budget": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 11,
+    "confused_with": {}
+  },
+  "travel_pace": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 3,
+    "confused_with": {}
+  },
+  "origin": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "transport_mode": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 5,
+    "confused_with": {}
+  },
+  "travel_party": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
+    "confused_with": {}
+  },
+  "destination": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1-score": 1.0,
+    "support": 9,
     "confused_with": {}
   },
   "travel_dates": {
     "precision": 1.0,
     "recall": 1.0,
     "f1-score": 1.0,
-    "support": 44,
+    "support": 15,
     "confused_with": {}
   },
   "micro avg": {
-    "precision": 0.9915254237288136,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.9957446808510638,
-    "support": 117
+    "f1-score": 1.0,
+    "support": 84
   },
   "macro avg": {
-    "precision": 0.9907407407407408,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.9952380952380953,
-    "support": 117
+    "f1-score": 1.0,
+    "support": 84
   },
   "weighted avg": {
-    "precision": 0.9919278252611586,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.9958485958485958,
-    "support": 117
+    "f1-score": 1.0,
+    "support": 84
   },
-  "accuracy": 0.9988738738738738
+  "accuracy": 1.0
 }
